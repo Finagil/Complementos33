@@ -8,6 +8,14 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.CFDI_Bancos' Puede moverla o quitarla según sea necesario.
+        Me.CFDI_BancosTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Bancos)
+        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.Bancos' Puede moverla o quitarla según sea necesario.
+        Me.BancosTableAdapter.Fill(Me.Production_AUXDataSet.Bancos)
+        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.Vw_CFDI_SadosFactura' Puede moverla o quitarla según sea necesario.
+        Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
+        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.CFDI_Encabezado' Puede moverla o quitarla según sea necesario.
+        Me.CFDI_EncabezadoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Encabezado)
         'TODO: This line of code loads data into the 'Production_AUXDataSet.Vw_CFDI_SadosFactura1' table. You can move, or remove it, as needed.
         Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
         'TODO: This line of code loads data into the 'Production_AUXDataSet.CFDI_Bancos' table. You can move, or remove it, as needed.
@@ -314,11 +322,6 @@ Public Class Form1
 
     Private Sub TextBox6_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txbCPagar.KeyPress
         NumerosyDecimal(sender, e)
-    End Sub
-
-
-    Private Sub CFDI_EncabezadoBindingSource_CurrentChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CFDI_EncabezadoBindingSource.CurrentChanged
-
     End Sub
 
     Private Sub txbCPagar_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txbCPagar.TextChanged

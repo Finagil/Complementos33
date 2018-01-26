@@ -78,6 +78,11 @@ Partial Class Form1
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Txtfoliofil = New System.Windows.Forms.TextBox()
+        Me.Production_AUXDataSet = New Complemento33.Production_AUXDataSet()
+        Me.CFDI_EncabezadoTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.CFDI_EncabezadoTableAdapter()
+        Me.Vw_CFDI_SadosFacturaTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.Vw_CFDI_SadosFacturaTableAdapter()
+        Me.BancosTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.BancosTableAdapter()
+        Me.CFDI_BancosTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.CFDI_BancosTableAdapter()
         CType(Me.CFDI_EncabezadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Vw_CFDI_FacturasConSaldoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InstrumentoMonetarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,10 +91,13 @@ Partial Class Form1
         CType(Me.Vw_CFDI_SadosFacturaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BancosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CFDI_BancosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Production_AUXDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CFDI_EncabezadoBindingSource
         '
+        Me.CFDI_EncabezadoBindingSource.DataMember = "CFDI_Encabezado"
+        Me.CFDI_EncabezadoBindingSource.DataSource = Me.Production_AUXDataSet
         '
         'TextBox1
         '
@@ -241,6 +249,11 @@ Partial Class Form1
         Me.TextBox8.Size = New System.Drawing.Size(51, 20)
         Me.TextBox8.TabIndex = 21
         '
+        'Vw_CFDI_SadosFacturaBindingSource
+        '
+        Me.Vw_CFDI_SadosFacturaBindingSource.DataMember = "Vw_CFDI_SadosFactura"
+        Me.Vw_CFDI_SadosFacturaBindingSource.DataSource = Me.Production_AUXDataSet
+        '
         'CmbFormaPago
         '
         Me.CmbFormaPago.DataSource = Me.InstrumentoMonetarioBindingSource
@@ -263,6 +276,11 @@ Partial Class Form1
         Me.ComboBox2.TabIndex = 23
         Me.ComboBox2.ValueMember = "Banco"
         Me.ComboBox2.Visible = False
+        '
+        'BancosBindingSource
+        '
+        Me.BancosBindingSource.DataMember = "Bancos"
+        Me.BancosBindingSource.DataSource = Me.Production_AUXDataSet
         '
         'DateTimePicker1
         '
@@ -364,6 +382,11 @@ Partial Class Form1
         Me.txbRfcCtaOrdenante.ReadOnly = True
         Me.txbRfcCtaOrdenante.Size = New System.Drawing.Size(132, 20)
         Me.txbRfcCtaOrdenante.TabIndex = 33
+        '
+        'CFDI_BancosBindingSource
+        '
+        Me.CFDI_BancosBindingSource.DataMember = "CFDI_Bancos"
+        Me.CFDI_BancosBindingSource.DataSource = Me.Production_AUXDataSet
         '
         'ComboBox3
         '
@@ -529,6 +552,27 @@ Partial Class Form1
         Me.Txtfoliofil.Size = New System.Drawing.Size(77, 20)
         Me.Txtfoliofil.TabIndex = 42
         '
+        'Production_AUXDataSet
+        '
+        Me.Production_AUXDataSet.DataSetName = "Production_AUXDataSet"
+        Me.Production_AUXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CFDI_EncabezadoTableAdapter
+        '
+        Me.CFDI_EncabezadoTableAdapter.ClearBeforeFill = True
+        '
+        'Vw_CFDI_SadosFacturaTableAdapter
+        '
+        Me.Vw_CFDI_SadosFacturaTableAdapter.ClearBeforeFill = True
+        '
+        'BancosTableAdapter
+        '
+        Me.BancosTableAdapter.ClearBeforeFill = True
+        '
+        'CFDI_BancosTableAdapter
+        '
+        Me.CFDI_BancosTableAdapter.ClearBeforeFill = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -586,6 +630,7 @@ Partial Class Form1
         CType(Me.Vw_CFDI_SadosFacturaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BancosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CFDI_BancosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Production_AUXDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -669,4 +714,9 @@ Partial Class Form1
     Friend WithEvents Label12 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Txtfoliofil As TextBox
+    Friend WithEvents Production_AUXDataSet As Production_AUXDataSet
+    Friend WithEvents CFDI_EncabezadoTableAdapter As Production_AUXDataSetTableAdapters.CFDI_EncabezadoTableAdapter
+    Friend WithEvents Vw_CFDI_SadosFacturaTableAdapter As Production_AUXDataSetTableAdapters.Vw_CFDI_SadosFacturaTableAdapter
+    Friend WithEvents BancosTableAdapter As Production_AUXDataSetTableAdapters.BancosTableAdapter
+    Friend WithEvents CFDI_BancosTableAdapter As Production_AUXDataSetTableAdapters.CFDI_BancosTableAdapter
 End Class

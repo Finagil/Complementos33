@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("gfactura")> 
+<Assembly: AssemblyTitle("Complemento33")>
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Microsoft")> 
-<Assembly: AssemblyProduct("gfactura")> 
+<Assembly: AssemblyCompany("Microsoft")>
+<Assembly: AssemblyProduct("Complemento33")>
 <Assembly: AssemblyCopyright("Copyright © Microsoft 2017")> 
 <Assembly: AssemblyTrademark("")> 
 

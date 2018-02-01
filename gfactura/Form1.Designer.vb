@@ -1,9 +1,9 @@
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,29 +17,22 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim SaldoFacturaLabel As System.Windows.Forms.Label
+        Dim _83_Cod_MonedaLabel As System.Windows.Forms.Label
+        Dim FolioFiscalLabel As System.Windows.Forms.Label
+        Dim NoPagosLabel As System.Windows.Forms.Label
         Me.CFDI_EncabezadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Production_AUXDataSet = New Complemento33.Production_AUXDataSet()
         Me.Vw_CFDI_FacturasConSaldoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.txbSaldo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txbCtaOrdenante = New System.Windows.Forms.TextBox()
-        Me.txbCPagar = New System.Windows.Forms.TextBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.InstrumentoMonetarioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Vw_CFDI_FacturasConSaldo1DataGridView = New System.Windows.Forms.DataGridView()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.CFDI_ComplementoPagoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Vw_CFDI_SadosFacturaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CmbFormaPago = New System.Windows.Forms.ComboBox()
@@ -57,11 +50,6 @@ Partial Class Form1
         Me.txbRfcCtaOrdenante = New System.Windows.Forms.TextBox()
         Me.CFDI_BancosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.txbIdDocumento = New System.Windows.Forms.TextBox()
-        Me.txbMoneda = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -78,66 +66,120 @@ Partial Class Form1
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Txtfoliofil = New System.Windows.Forms.TextBox()
-        Me.Production_AUXDataSet = New Complemento33.Production_AUXDataSet()
         Me.CFDI_EncabezadoTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.CFDI_EncabezadoTableAdapter()
         Me.Vw_CFDI_SadosFacturaTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.Vw_CFDI_SadosFacturaTableAdapter()
         Me.BancosTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.BancosTableAdapter()
         Me.CFDI_BancosTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.CFDI_BancosTableAdapter()
+        Me.Vw_CFDI_FacturasConSaldoTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.Vw_CFDI_FacturasConSaldoTableAdapter()
+        Me.CFDI_ComplementoPagoTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.CFDI_ComplementoPagoTableAdapter()
+        Me.InstrumentoMonetarioTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.InstrumentoMonetarioTableAdapter()
+        Me.CFDI_DetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CFDI_DetalleTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.CFDI_DetalleTableAdapter()
+        Me._27_Serie_ComprobanteTextBox = New System.Windows.Forms.TextBox()
+        Me._1_FolioTextBox = New System.Windows.Forms.TextBox()
+        Me.SaldoFacturaTextBox = New System.Windows.Forms.TextBox()
+        Me.lbPago = New System.Windows.Forms.Label()
+        Me.txtPago = New System.Windows.Forms.TextBox()
+        Me.dgDoctosPagos = New System.Windows.Forms.DataGridView()
+        Me.dgUUID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgSerie = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFolio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgMoneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgTCambio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgMPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgParcialidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgSaldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgImpPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgSaldoInsoluto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgElimina = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me._83_Cod_MonedaTextBox = New System.Windows.Forms.TextBox()
+        Me.gbEmisor = New System.Windows.Forms.GroupBox()
+        Me.rbArfin = New System.Windows.Forms.RadioButton()
+        Me.rbFinagil = New System.Windows.Forms.RadioButton()
+        Me.FolioFiscalTextBox = New System.Windows.Forms.TextBox()
+        Me.NoPagosTextBox = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.cbMoneda = New System.Windows.Forms.ComboBox()
+        Me.lbMoneda = New System.Windows.Forms.Label()
+        Me.lbTotalP = New System.Windows.Forms.Label()
+        Me.lbTotal = New System.Windows.Forms.Label()
+        SaldoFacturaLabel = New System.Windows.Forms.Label()
+        _83_Cod_MonedaLabel = New System.Windows.Forms.Label()
+        FolioFiscalLabel = New System.Windows.Forms.Label()
+        NoPagosLabel = New System.Windows.Forms.Label()
         CType(Me.CFDI_EncabezadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Production_AUXDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Vw_CFDI_FacturasConSaldoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InstrumentoMonetarioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Vw_CFDI_FacturasConSaldo1DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CFDI_ComplementoPagoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Vw_CFDI_SadosFacturaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BancosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CFDI_BancosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Production_AUXDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CFDI_DetalleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgDoctosPagos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbEmisor.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'SaldoFacturaLabel
+        '
+        SaldoFacturaLabel.AutoSize = True
+        SaldoFacturaLabel.Enabled = False
+        SaldoFacturaLabel.Location = New System.Drawing.Point(667, 6)
+        SaldoFacturaLabel.Name = "SaldoFacturaLabel"
+        SaldoFacturaLabel.Size = New System.Drawing.Size(76, 13)
+        SaldoFacturaLabel.TabIndex = 47
+        SaldoFacturaLabel.Text = "Saldo Factura:"
+        '
+        '_83_Cod_MonedaLabel
+        '
+        _83_Cod_MonedaLabel.AutoSize = True
+        _83_Cod_MonedaLabel.Enabled = False
+        _83_Cod_MonedaLabel.Location = New System.Drawing.Point(561, 6)
+        _83_Cod_MonedaLabel.Name = "_83_Cod_MonedaLabel"
+        _83_Cod_MonedaLabel.Size = New System.Drawing.Size(49, 13)
+        _83_Cod_MonedaLabel.TabIndex = 56
+        _83_Cod_MonedaLabel.Text = "Moneda:"
+        '
+        'FolioFiscalLabel
+        '
+        FolioFiscalLabel.AutoSize = True
+        FolioFiscalLabel.Enabled = False
+        FolioFiscalLabel.Location = New System.Drawing.Point(985, 6)
+        FolioFiscalLabel.Name = "FolioFiscalLabel"
+        FolioFiscalLabel.Size = New System.Drawing.Size(62, 13)
+        FolioFiscalLabel.TabIndex = 59
+        FolioFiscalLabel.Text = "Folio Fiscal:"
+        '
+        'NoPagosLabel
+        '
+        NoPagosLabel.AutoSize = True
+        NoPagosLabel.Enabled = False
+        NoPagosLabel.Location = New System.Drawing.Point(773, 6)
+        NoPagosLabel.Name = "NoPagosLabel"
+        NoPagosLabel.Size = New System.Drawing.Size(57, 13)
+        NoPagosLabel.TabIndex = 60
+        NoPagosLabel.Text = "No Pagos:"
         '
         'CFDI_EncabezadoBindingSource
         '
         Me.CFDI_EncabezadoBindingSource.DataMember = "CFDI_Encabezado"
         Me.CFDI_EncabezadoBindingSource.DataSource = Me.Production_AUXDataSet
         '
-        'TextBox1
+        'Production_AUXDataSet
         '
-        Me.TextBox1.Location = New System.Drawing.Point(74, 285)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(77, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.Production_AUXDataSet.DataSetName = "Production_AUXDataSet"
+        Me.Production_AUXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'TextBox2
+        'Vw_CFDI_FacturasConSaldoBindingSource
         '
-        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "42_Nombre_Receptor", True))
-        Me.TextBox2.Location = New System.Drawing.Point(157, 285)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(414, 20)
-        Me.TextBox2.TabIndex = 3
-        '
-        'TextBox3
-        '
-        Me.TextBox3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "56_Monto_Total", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, Nothing, "N2"))
-        Me.TextBox3.Location = New System.Drawing.Point(580, 285)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 4
-        '
-        'txbSaldo
-        '
-        Me.txbSaldo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "SaldoFactura", True))
-        Me.txbSaldo.Location = New System.Drawing.Point(686, 285)
-        Me.txbSaldo.Name = "txbSaldo"
-        Me.txbSaldo.ReadOnly = True
-        Me.txbSaldo.Size = New System.Drawing.Size(100, 20)
-        Me.txbSaldo.TabIndex = 5
+        Me.Vw_CFDI_FacturasConSaldoBindingSource.DataMember = "Vw_CFDI_FacturasConSaldo"
+        Me.Vw_CFDI_FacturasConSaldoBindingSource.DataSource = Me.Production_AUXDataSet
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(366, 350)
+        Me.Label1.Location = New System.Drawing.Point(370, 342)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(94, 13)
         Me.Label1.TabIndex = 6
@@ -145,109 +187,47 @@ Partial Class Form1
         '
         'txbCtaOrdenante
         '
-        Me.txbCtaOrdenante.Location = New System.Drawing.Point(369, 366)
+        Me.txbCtaOrdenante.Location = New System.Drawing.Point(373, 358)
         Me.txbCtaOrdenante.Name = "txbCtaOrdenante"
         Me.txbCtaOrdenante.Size = New System.Drawing.Size(116, 20)
-        Me.txbCtaOrdenante.TabIndex = 7
-        '
-        'txbCPagar
-        '
-        Me.txbCPagar.Location = New System.Drawing.Point(491, 367)
-        Me.txbCPagar.Name = "txbCPagar"
-        Me.txbCPagar.Size = New System.Drawing.Size(116, 20)
-        Me.txbCPagar.TabIndex = 8
+        Me.txbCtaOrdenante.TabIndex = 9
         '
         'TextBox7
         '
         Me.TextBox7.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.InstrumentoMonetarioBindingSource, "SAT", True))
-        Me.TextBox7.Location = New System.Drawing.Point(343, 324)
+        Me.TextBox7.Location = New System.Drawing.Point(347, 316)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.ReadOnly = True
         Me.TextBox7.Size = New System.Drawing.Size(25, 20)
         Me.TextBox7.TabIndex = 9
         '
+        'InstrumentoMonetarioBindingSource
+        '
+        Me.InstrumentoMonetarioBindingSource.DataMember = "InstrumentoMonetario"
+        Me.InstrumentoMonetarioBindingSource.DataSource = Me.Production_AUXDataSet
+        '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(970, 334)
+        Me.Button2.Location = New System.Drawing.Point(977, 315)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(150, 53)
-        Me.Button2.TabIndex = 13
+        Me.Button2.TabIndex = 12
         Me.Button2.Text = "Guardar Datos y Generar Factura"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(14, 350)
+        Me.Label2.Location = New System.Drawing.Point(18, 342)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(131, 13)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Nombre Banco Ordenante"
         '
-        'Vw_CFDI_FacturasConSaldo1DataGridView
+        'CFDI_ComplementoPagoBindingSource
         '
-        Me.Vw_CFDI_FacturasConSaldo1DataGridView.AllowUserToAddRows = False
-        Me.Vw_CFDI_FacturasConSaldo1DataGridView.AllowUserToDeleteRows = False
-        Me.Vw_CFDI_FacturasConSaldo1DataGridView.AutoGenerateColumns = False
-        Me.Vw_CFDI_FacturasConSaldo1DataGridView.DataSource = Me.Vw_CFDI_FacturasConSaldoBindingSource
-        Me.Vw_CFDI_FacturasConSaldo1DataGridView.Location = New System.Drawing.Point(12, 49)
-        Me.Vw_CFDI_FacturasConSaldo1DataGridView.Name = "Vw_CFDI_FacturasConSaldo1DataGridView"
-        Me.Vw_CFDI_FacturasConSaldo1DataGridView.ReadOnly = True
-        Me.Vw_CFDI_FacturasConSaldo1DataGridView.Size = New System.Drawing.Size(1204, 217)
-        Me.Vw_CFDI_FacturasConSaldo1DataGridView.TabIndex = 15
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(71, 269)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(29, 13)
-        Me.Label3.TabIndex = 16
-        Me.Label3.Text = "Folio"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(154, 269)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 17
-        Me.Label4.Text = "Cliente"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(577, 269)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(64, 13)
-        Me.Label5.TabIndex = 18
-        Me.Label5.Text = "Monto Total"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(683, 269)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(34, 13)
-        Me.Label6.TabIndex = 19
-        Me.Label6.Text = "Saldo"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(14, 269)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(31, 13)
-        Me.Label7.TabIndex = 20
-        Me.Label7.Text = "Serie"
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(17, 285)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(51, 20)
-        Me.TextBox8.TabIndex = 21
+        Me.CFDI_ComplementoPagoBindingSource.DataMember = "CFDI_ComplementoPago"
+        Me.CFDI_ComplementoPagoBindingSource.DataSource = Me.Production_AUXDataSet
         '
         'Vw_CFDI_SadosFacturaBindingSource
         '
@@ -259,10 +239,10 @@ Partial Class Form1
         Me.CmbFormaPago.DataSource = Me.InstrumentoMonetarioBindingSource
         Me.CmbFormaPago.DisplayMember = "Titulo"
         Me.CmbFormaPago.FormattingEnabled = True
-        Me.CmbFormaPago.Location = New System.Drawing.Point(129, 324)
+        Me.CmbFormaPago.Location = New System.Drawing.Point(133, 316)
         Me.CmbFormaPago.Name = "CmbFormaPago"
         Me.CmbFormaPago.Size = New System.Drawing.Size(208, 21)
-        Me.CmbFormaPago.TabIndex = 22
+        Me.CmbFormaPago.TabIndex = 5
         Me.CmbFormaPago.ValueMember = "SAT"
         '
         'ComboBox2
@@ -270,10 +250,10 @@ Partial Class Form1
         Me.ComboBox2.DataSource = Me.BancosBindingSource
         Me.ComboBox2.DisplayMember = "DescBanco"
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(374, 323)
+        Me.ComboBox2.Location = New System.Drawing.Point(378, 315)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(135, 21)
-        Me.ComboBox2.TabIndex = 23
+        Me.ComboBox2.TabIndex = 6
         Me.ComboBox2.ValueMember = "Banco"
         Me.ComboBox2.Visible = False
         '
@@ -285,18 +265,18 @@ Partial Class Form1
         'DateTimePicker1
         '
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(17, 324)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(21, 316)
         Me.DateTimePicker1.MaxDate = New Date(2017, 11, 24, 0, 0, 0, 0)
         Me.DateTimePicker1.MinDate = New Date(2017, 11, 24, 0, 0, 0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(106, 20)
-        Me.DateTimePicker1.TabIndex = 24
+        Me.DateTimePicker1.TabIndex = 4
         Me.DateTimePicker1.Value = New Date(2017, 11, 24, 0, 0, 0, 0)
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(14, 308)
+        Me.Label8.Location = New System.Drawing.Point(18, 300)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(80, 13)
         Me.Label8.TabIndex = 25
@@ -305,7 +285,7 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(126, 308)
+        Me.Label9.Location = New System.Drawing.Point(130, 300)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(79, 13)
         Me.Label9.TabIndex = 26
@@ -314,7 +294,7 @@ Partial Class Form1
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(371, 307)
+        Me.Label10.Location = New System.Drawing.Point(375, 299)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(82, 13)
         Me.Label10.TabIndex = 27
@@ -324,7 +304,7 @@ Partial Class Form1
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(576, 308)
+        Me.Label11.Location = New System.Drawing.Point(630, 300)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(99, 13)
         Me.Label11.TabIndex = 28
@@ -335,7 +315,7 @@ Partial Class Form1
         '
         Me.lblCtaBeneficiario.AutoSize = True
         Me.lblCtaBeneficiario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BancosBindingSource, "Cuenta", True))
-        Me.lblCtaBeneficiario.Location = New System.Drawing.Point(577, 327)
+        Me.lblCtaBeneficiario.Location = New System.Drawing.Point(631, 319)
         Me.lblCtaBeneficiario.Name = "lblCtaBeneficiario"
         Me.lblCtaBeneficiario.Size = New System.Drawing.Size(41, 13)
         Me.lblCtaBeneficiario.TabIndex = 29
@@ -345,7 +325,7 @@ Partial Class Form1
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(681, 308)
+        Me.Label13.Location = New System.Drawing.Point(735, 300)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(105, 13)
         Me.Label13.TabIndex = 30
@@ -356,7 +336,7 @@ Partial Class Form1
         '
         Me.lblRfcCtaBeneficiario.AutoSize = True
         Me.lblRfcCtaBeneficiario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BancosBindingSource, "RFC", True))
-        Me.lblRfcCtaBeneficiario.Location = New System.Drawing.Point(681, 327)
+        Me.lblRfcCtaBeneficiario.Location = New System.Drawing.Point(735, 319)
         Me.lblRfcCtaBeneficiario.Name = "lblRfcCtaBeneficiario"
         Me.lblRfcCtaBeneficiario.Size = New System.Drawing.Size(31, 13)
         Me.lblRfcCtaBeneficiario.TabIndex = 31
@@ -366,7 +346,7 @@ Partial Class Form1
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(226, 350)
+        Me.Label15.Location = New System.Drawing.Point(230, 342)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(100, 13)
         Me.Label15.TabIndex = 32
@@ -377,7 +357,7 @@ Partial Class Form1
         '
         Me.txbRfcCtaOrdenante.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.CFDI_BancosBindingSource, "RFC", True))
         Me.txbRfcCtaOrdenante.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CFDI_BancosBindingSource, "RFC", True))
-        Me.txbRfcCtaOrdenante.Location = New System.Drawing.Point(231, 366)
+        Me.txbRfcCtaOrdenante.Location = New System.Drawing.Point(235, 358)
         Me.txbRfcCtaOrdenante.Name = "txbRfcCtaOrdenante"
         Me.txbRfcCtaOrdenante.ReadOnly = True
         Me.txbRfcCtaOrdenante.Size = New System.Drawing.Size(132, 20)
@@ -393,56 +373,11 @@ Partial Class Form1
         Me.ComboBox3.DataSource = Me.CFDI_BancosBindingSource
         Me.ComboBox3.DisplayMember = "Nombre"
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(17, 366)
+        Me.ComboBox3.Location = New System.Drawing.Point(21, 358)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(208, 21)
-        Me.ComboBox3.TabIndex = 34
+        Me.ComboBox3.TabIndex = 8
         Me.ComboBox3.ValueMember = "SAT"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(488, 350)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(101, 13)
-        Me.Label16.TabIndex = 35
-        Me.Label16.Text = "Cantidad a Pagar  $"
-        '
-        'txbIdDocumento
-        '
-        Me.txbIdDocumento.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "FolioFiscal", True))
-        Me.txbIdDocumento.Location = New System.Drawing.Point(792, 285)
-        Me.txbIdDocumento.Name = "txbIdDocumento"
-        Me.txbIdDocumento.ReadOnly = True
-        Me.txbIdDocumento.Size = New System.Drawing.Size(268, 20)
-        Me.txbIdDocumento.TabIndex = 36
-        '
-        'txbMoneda
-        '
-        Me.txbMoneda.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "83_Cod_Moneda", True))
-        Me.txbMoneda.Location = New System.Drawing.Point(1066, 285)
-        Me.txbMoneda.Name = "txbMoneda"
-        Me.txbMoneda.ReadOnly = True
-        Me.txbMoneda.Size = New System.Drawing.Size(54, 20)
-        Me.txbMoneda.TabIndex = 37
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(792, 269)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(76, 13)
-        Me.Label17.TabIndex = 38
-        Me.Label17.Text = "ID Documento"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(1066, 269)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(46, 13)
-        Me.Label18.TabIndex = 39
-        Me.Label18.Text = "Moneda"
         '
         'DataGridViewTextBoxColumn16
         '
@@ -506,15 +441,15 @@ Partial Class Form1
         '
         'txbrpago
         '
-        Me.txbrpago.Location = New System.Drawing.Point(613, 367)
+        Me.txbrpago.Location = New System.Drawing.Point(495, 358)
         Me.txbrpago.Name = "txbrpago"
         Me.txbrpago.Size = New System.Drawing.Size(100, 20)
-        Me.txbrpago.TabIndex = 40
+        Me.txbrpago.TabIndex = 11
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(610, 350)
+        Me.Label19.Location = New System.Drawing.Point(492, 341)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(87, 13)
         Me.Label19.TabIndex = 41
@@ -522,15 +457,15 @@ Partial Class Form1
         '
         'TxtSeriefil
         '
-        Me.TxtSeriefil.Location = New System.Drawing.Point(12, 23)
+        Me.TxtSeriefil.Location = New System.Drawing.Point(203, 22)
         Me.TxtSeriefil.Name = "TxtSeriefil"
         Me.TxtSeriefil.Size = New System.Drawing.Size(51, 20)
-        Me.TxtSeriefil.TabIndex = 45
+        Me.TxtSeriefil.TabIndex = 1
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(9, 7)
+        Me.Label12.Location = New System.Drawing.Point(200, 6)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(31, 13)
         Me.Label12.TabIndex = 44
@@ -539,7 +474,7 @@ Partial Class Form1
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(73, 7)
+        Me.Label14.Location = New System.Drawing.Point(264, 6)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(29, 13)
         Me.Label14.TabIndex = 43
@@ -547,15 +482,10 @@ Partial Class Form1
         '
         'Txtfoliofil
         '
-        Me.Txtfoliofil.Location = New System.Drawing.Point(69, 23)
+        Me.Txtfoliofil.Location = New System.Drawing.Point(260, 22)
         Me.Txtfoliofil.Name = "Txtfoliofil"
         Me.Txtfoliofil.Size = New System.Drawing.Size(77, 20)
-        Me.Txtfoliofil.TabIndex = 42
-        '
-        'Production_AUXDataSet
-        '
-        Me.Production_AUXDataSet.DataSetName = "Production_AUXDataSet"
-        Me.Production_AUXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.Txtfoliofil.TabIndex = 2
         '
         'CFDI_EncabezadoTableAdapter
         '
@@ -573,23 +503,299 @@ Partial Class Form1
         '
         Me.CFDI_BancosTableAdapter.ClearBeforeFill = True
         '
+        'Vw_CFDI_FacturasConSaldoTableAdapter
+        '
+        Me.Vw_CFDI_FacturasConSaldoTableAdapter.ClearBeforeFill = True
+        '
+        'CFDI_ComplementoPagoTableAdapter
+        '
+        Me.CFDI_ComplementoPagoTableAdapter.ClearBeforeFill = True
+        '
+        'InstrumentoMonetarioTableAdapter
+        '
+        Me.InstrumentoMonetarioTableAdapter.ClearBeforeFill = True
+        '
+        'CFDI_DetalleBindingSource
+        '
+        Me.CFDI_DetalleBindingSource.DataMember = "CFDI_Detalle"
+        Me.CFDI_DetalleBindingSource.DataSource = Me.Production_AUXDataSet
+        '
+        'CFDI_DetalleTableAdapter
+        '
+        Me.CFDI_DetalleTableAdapter.ClearBeforeFill = True
+        '
+        '_27_Serie_ComprobanteTextBox
+        '
+        Me._27_Serie_ComprobanteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "27_Serie_Comprobante", True))
+        Me._27_Serie_ComprobanteTextBox.Enabled = False
+        Me._27_Serie_ComprobanteTextBox.Location = New System.Drawing.Point(352, 22)
+        Me._27_Serie_ComprobanteTextBox.Name = "_27_Serie_ComprobanteTextBox"
+        Me._27_Serie_ComprobanteTextBox.Size = New System.Drawing.Size(100, 20)
+        Me._27_Serie_ComprobanteTextBox.TabIndex = 46
+        '
+        '_1_FolioTextBox
+        '
+        Me._1_FolioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "1_Folio", True))
+        Me._1_FolioTextBox.Enabled = False
+        Me._1_FolioTextBox.Location = New System.Drawing.Point(458, 22)
+        Me._1_FolioTextBox.Name = "_1_FolioTextBox"
+        Me._1_FolioTextBox.Size = New System.Drawing.Size(100, 20)
+        Me._1_FolioTextBox.TabIndex = 47
+        '
+        'SaldoFacturaTextBox
+        '
+        Me.SaldoFacturaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "SaldoFactura", True))
+        Me.SaldoFacturaTextBox.Enabled = False
+        Me.SaldoFacturaTextBox.Location = New System.Drawing.Point(670, 22)
+        Me.SaldoFacturaTextBox.Name = "SaldoFacturaTextBox"
+        Me.SaldoFacturaTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.SaldoFacturaTextBox.TabIndex = 48
+        '
+        'lbPago
+        '
+        Me.lbPago.AutoSize = True
+        Me.lbPago.Enabled = False
+        Me.lbPago.Location = New System.Drawing.Point(879, 6)
+        Me.lbPago.Name = "lbPago"
+        Me.lbPago.Size = New System.Drawing.Size(84, 13)
+        Me.lbPago.TabIndex = 49
+        Me.lbPago.Text = "Importe a pagar:"
+        '
+        'txtPago
+        '
+        Me.txtPago.Enabled = False
+        Me.txtPago.Location = New System.Drawing.Point(882, 22)
+        Me.txtPago.Name = "txtPago"
+        Me.txtPago.Size = New System.Drawing.Size(100, 20)
+        Me.txtPago.TabIndex = 3
+        '
+        'dgDoctosPagos
+        '
+        Me.dgDoctosPagos.AllowUserToAddRows = False
+        Me.dgDoctosPagos.AllowUserToDeleteRows = False
+        Me.dgDoctosPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgDoctosPagos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgUUID, Me.dgSerie, Me.dgFolio, Me.dgMoneda, Me.dgTCambio, Me.dgMPago, Me.dgParcialidad, Me.dgSaldo, Me.dgImpPago, Me.dgSaldoInsoluto, Me.dgElimina})
+        Me.dgDoctosPagos.Location = New System.Drawing.Point(17, 90)
+        Me.dgDoctosPagos.Name = "dgDoctosPagos"
+        Me.dgDoctosPagos.ReadOnly = True
+        Me.dgDoctosPagos.Size = New System.Drawing.Size(1199, 194)
+        Me.dgDoctosPagos.TabIndex = 51
+        '
+        'dgUUID
+        '
+        Me.dgUUID.HeaderText = "UUID"
+        Me.dgUUID.Name = "dgUUID"
+        Me.dgUUID.ReadOnly = True
+        '
+        'dgSerie
+        '
+        Me.dgSerie.HeaderText = "Serie"
+        Me.dgSerie.Name = "dgSerie"
+        Me.dgSerie.ReadOnly = True
+        '
+        'dgFolio
+        '
+        Me.dgFolio.HeaderText = "Folio"
+        Me.dgFolio.Name = "dgFolio"
+        Me.dgFolio.ReadOnly = True
+        '
+        'dgMoneda
+        '
+        Me.dgMoneda.HeaderText = "Moneda"
+        Me.dgMoneda.Name = "dgMoneda"
+        Me.dgMoneda.ReadOnly = True
+        Me.dgMoneda.Width = 50
+        '
+        'dgTCambio
+        '
+        Me.dgTCambio.HeaderText = "T Cambio"
+        Me.dgTCambio.Name = "dgTCambio"
+        Me.dgTCambio.ReadOnly = True
+        '
+        'dgMPago
+        '
+        Me.dgMPago.HeaderText = "M Pago"
+        Me.dgMPago.Name = "dgMPago"
+        Me.dgMPago.ReadOnly = True
+        '
+        'dgParcialidad
+        '
+        Me.dgParcialidad.HeaderText = "Parc"
+        Me.dgParcialidad.Name = "dgParcialidad"
+        Me.dgParcialidad.ReadOnly = True
+        '
+        'dgSaldo
+        '
+        Me.dgSaldo.HeaderText = "Saldo"
+        Me.dgSaldo.Name = "dgSaldo"
+        Me.dgSaldo.ReadOnly = True
+        '
+        'dgImpPago
+        '
+        Me.dgImpPago.HeaderText = "Imp a Pagar"
+        Me.dgImpPago.Name = "dgImpPago"
+        Me.dgImpPago.ReadOnly = True
+        '
+        'dgSaldoInsoluto
+        '
+        Me.dgSaldoInsoluto.HeaderText = "S Insol"
+        Me.dgSaldoInsoluto.Name = "dgSaldoInsoluto"
+        Me.dgSaldoInsoluto.ReadOnly = True
+        '
+        'dgElimina
+        '
+        Me.dgElimina.HeaderText = "Eliminar"
+        Me.dgElimina.Name = "dgElimina"
+        Me.dgElimina.ReadOnly = True
+        Me.dgElimina.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgElimina.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        '_83_Cod_MonedaTextBox
+        '
+        Me._83_Cod_MonedaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "83_Cod_Moneda", True))
+        Me._83_Cod_MonedaTextBox.Enabled = False
+        Me._83_Cod_MonedaTextBox.Location = New System.Drawing.Point(564, 22)
+        Me._83_Cod_MonedaTextBox.Name = "_83_Cod_MonedaTextBox"
+        Me._83_Cod_MonedaTextBox.Size = New System.Drawing.Size(100, 20)
+        Me._83_Cod_MonedaTextBox.TabIndex = 57
+        '
+        'gbEmisor
+        '
+        Me.gbEmisor.Controls.Add(Me.rbArfin)
+        Me.gbEmisor.Controls.Add(Me.rbFinagil)
+        Me.gbEmisor.Location = New System.Drawing.Point(17, 0)
+        Me.gbEmisor.Name = "gbEmisor"
+        Me.gbEmisor.Size = New System.Drawing.Size(155, 48)
+        Me.gbEmisor.TabIndex = 58
+        Me.gbEmisor.TabStop = False
+        Me.gbEmisor.Text = "Emisor:"
+        '
+        'rbArfin
+        '
+        Me.rbArfin.AutoSize = True
+        Me.rbArfin.Location = New System.Drawing.Point(88, 19)
+        Me.rbArfin.Name = "rbArfin"
+        Me.rbArfin.Size = New System.Drawing.Size(46, 17)
+        Me.rbArfin.TabIndex = 1
+        Me.rbArfin.Text = "Arfin"
+        Me.rbArfin.UseVisualStyleBackColor = True
+        '
+        'rbFinagil
+        '
+        Me.rbFinagil.AutoSize = True
+        Me.rbFinagil.Checked = True
+        Me.rbFinagil.Location = New System.Drawing.Point(16, 19)
+        Me.rbFinagil.Name = "rbFinagil"
+        Me.rbFinagil.Size = New System.Drawing.Size(55, 17)
+        Me.rbFinagil.TabIndex = 0
+        Me.rbFinagil.TabStop = True
+        Me.rbFinagil.Text = "Finagil"
+        Me.rbFinagil.UseVisualStyleBackColor = True
+        '
+        'FolioFiscalTextBox
+        '
+        Me.FolioFiscalTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "FolioFiscal", True))
+        Me.FolioFiscalTextBox.Enabled = False
+        Me.FolioFiscalTextBox.Location = New System.Drawing.Point(988, 22)
+        Me.FolioFiscalTextBox.Name = "FolioFiscalTextBox"
+        Me.FolioFiscalTextBox.Size = New System.Drawing.Size(236, 20)
+        Me.FolioFiscalTextBox.TabIndex = 60
+        '
+        'NoPagosTextBox
+        '
+        Me.NoPagosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "NoPagos", True))
+        Me.NoPagosTextBox.Enabled = False
+        Me.NoPagosTextBox.Location = New System.Drawing.Point(776, 22)
+        Me.NoPagosTextBox.Name = "NoPagosTextBox"
+        Me.NoPagosTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.NoPagosTextBox.TabIndex = 61
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(561, 54)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(42, 13)
+        Me.Label4.TabIndex = 17
+        Me.Label4.Text = "Cliente:"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.SystemColors.Window
+        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Vw_CFDI_FacturasConSaldoBindingSource, "42_Nombre_Receptor", True))
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(606, 51)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(414, 20)
+        Me.TextBox2.TabIndex = 3
+        '
+        'cbMoneda
+        '
+        Me.cbMoneda.FormattingEnabled = True
+        Me.cbMoneda.Items.AddRange(New Object() {"MXN", "USD"})
+        Me.cbMoneda.Location = New System.Drawing.Point(519, 315)
+        Me.cbMoneda.Name = "cbMoneda"
+        Me.cbMoneda.Size = New System.Drawing.Size(73, 21)
+        Me.cbMoneda.TabIndex = 7
+        Me.cbMoneda.Text = "MXN"
+        '
+        'lbMoneda
+        '
+        Me.lbMoneda.AutoSize = True
+        Me.lbMoneda.Location = New System.Drawing.Point(520, 299)
+        Me.lbMoneda.Name = "lbMoneda"
+        Me.lbMoneda.Size = New System.Drawing.Size(49, 13)
+        Me.lbMoneda.TabIndex = 63
+        Me.lbMoneda.Text = "Moneda:"
+        '
+        'lbTotalP
+        '
+        Me.lbTotalP.AutoSize = True
+        Me.lbTotalP.Location = New System.Drawing.Point(633, 358)
+        Me.lbTotalP.Name = "lbTotalP"
+        Me.lbTotalP.Size = New System.Drawing.Size(74, 13)
+        Me.lbTotalP.TabIndex = 64
+        Me.lbTotalP.Text = "Total Pago:  $"
+        '
+        'lbTotal
+        '
+        Me.lbTotal.AutoSize = True
+        Me.lbTotal.Location = New System.Drawing.Point(710, 358)
+        Me.lbTotal.Name = "lbTotal"
+        Me.lbTotal.Size = New System.Drawing.Size(13, 13)
+        Me.lbTotal.TabIndex = 65
+        Me.lbTotal.Text = "0"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1230, 404)
+        Me.ClientSize = New System.Drawing.Size(1236, 393)
+        Me.Controls.Add(Me.lbTotal)
+        Me.Controls.Add(Me.lbTotalP)
+        Me.Controls.Add(Me.lbMoneda)
+        Me.Controls.Add(Me.cbMoneda)
+        Me.Controls.Add(NoPagosLabel)
+        Me.Controls.Add(Me.NoPagosTextBox)
+        Me.Controls.Add(FolioFiscalLabel)
+        Me.Controls.Add(Me.FolioFiscalTextBox)
+        Me.Controls.Add(Me.gbEmisor)
+        Me.Controls.Add(_83_Cod_MonedaLabel)
+        Me.Controls.Add(Me._83_Cod_MonedaTextBox)
+        Me.Controls.Add(Me.txtPago)
+        Me.Controls.Add(Me.lbPago)
+        Me.Controls.Add(SaldoFacturaLabel)
+        Me.Controls.Add(Me.SaldoFacturaTextBox)
+        Me.Controls.Add(Me._1_FolioTextBox)
+        Me.Controls.Add(Me._27_Serie_ComprobanteTextBox)
         Me.Controls.Add(Me.TxtSeriefil)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Txtfoliofil)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.txbrpago)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.txbMoneda)
-        Me.Controls.Add(Me.txbIdDocumento)
-        Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.ComboBox3)
         Me.Controls.Add(Me.txbRfcCtaOrdenante)
         Me.Controls.Add(Me.Label15)
@@ -603,58 +809,41 @@ Partial Class Form1
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.CmbFormaPago)
-        Me.Controls.Add(Me.TextBox8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Vw_CFDI_FacturasConSaldo1DataGridView)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.txbCPagar)
         Me.Controls.Add(Me.txbCtaOrdenante)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txbSaldo)
-        Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.dgDoctosPagos)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Generador de Complementos"
         CType(Me.CFDI_EncabezadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Production_AUXDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Vw_CFDI_FacturasConSaldoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InstrumentoMonetarioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Vw_CFDI_FacturasConSaldo1DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CFDI_ComplementoPagoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Vw_CFDI_SadosFacturaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BancosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CFDI_BancosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Production_AUXDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CFDI_DetalleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgDoctosPagos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbEmisor.ResumeLayout(False)
+        Me.gbEmisor.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents CFDI_EncabezadoBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents txbSaldo As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txbCtaOrdenante As System.Windows.Forms.TextBox
-    Friend WithEvents txbCPagar As System.Windows.Forms.TextBox
     Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents Vw_CFDI_SadosFacturaBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Vw_CFDI_FacturasConSaldoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Vw_CFDI_FacturasConSaldo1DataGridView As System.Windows.Forms.DataGridView
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
     Friend WithEvents CFDI_ComplementoPagoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -693,11 +882,6 @@ Partial Class Form1
     Friend WithEvents txbRfcCtaOrdenante As System.Windows.Forms.TextBox
     Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
     Friend WithEvents CFDI_BancosBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents txbIdDocumento As System.Windows.Forms.TextBox
-    Friend WithEvents txbMoneda As System.Windows.Forms.TextBox
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents DataGridViewTextBoxColumn16 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn18 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -719,4 +903,38 @@ Partial Class Form1
     Friend WithEvents Vw_CFDI_SadosFacturaTableAdapter As Production_AUXDataSetTableAdapters.Vw_CFDI_SadosFacturaTableAdapter
     Friend WithEvents BancosTableAdapter As Production_AUXDataSetTableAdapters.BancosTableAdapter
     Friend WithEvents CFDI_BancosTableAdapter As Production_AUXDataSetTableAdapters.CFDI_BancosTableAdapter
+    Friend WithEvents Vw_CFDI_FacturasConSaldoTableAdapter As Production_AUXDataSetTableAdapters.Vw_CFDI_FacturasConSaldoTableAdapter
+    Friend WithEvents CFDI_ComplementoPagoTableAdapter As Production_AUXDataSetTableAdapters.CFDI_ComplementoPagoTableAdapter
+    Friend WithEvents InstrumentoMonetarioTableAdapter As Production_AUXDataSetTableAdapters.InstrumentoMonetarioTableAdapter
+    Friend WithEvents CFDI_DetalleBindingSource As BindingSource
+    Friend WithEvents CFDI_DetalleTableAdapter As Production_AUXDataSetTableAdapters.CFDI_DetalleTableAdapter
+    Friend WithEvents _27_Serie_ComprobanteTextBox As TextBox
+    Friend WithEvents _1_FolioTextBox As TextBox
+    Friend WithEvents SaldoFacturaTextBox As TextBox
+    Friend WithEvents lbPago As Label
+    Friend WithEvents txtPago As TextBox
+    Friend WithEvents dgDoctosPagos As DataGridView
+    Friend WithEvents _83_Cod_MonedaTextBox As TextBox
+    Friend WithEvents gbEmisor As GroupBox
+    Friend WithEvents rbArfin As RadioButton
+    Friend WithEvents rbFinagil As RadioButton
+    Friend WithEvents FolioFiscalTextBox As TextBox
+    Friend WithEvents NoPagosTextBox As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents cbMoneda As ComboBox
+    Friend WithEvents lbMoneda As Label
+    Friend WithEvents dgUUID As DataGridViewTextBoxColumn
+    Friend WithEvents dgSerie As DataGridViewTextBoxColumn
+    Friend WithEvents dgFolio As DataGridViewTextBoxColumn
+    Friend WithEvents dgMoneda As DataGridViewTextBoxColumn
+    Friend WithEvents dgTCambio As DataGridViewTextBoxColumn
+    Friend WithEvents dgMPago As DataGridViewTextBoxColumn
+    Friend WithEvents dgParcialidad As DataGridViewTextBoxColumn
+    Friend WithEvents dgSaldo As DataGridViewTextBoxColumn
+    Friend WithEvents dgImpPago As DataGridViewTextBoxColumn
+    Friend WithEvents dgSaldoInsoluto As DataGridViewTextBoxColumn
+    Friend WithEvents dgElimina As DataGridViewLinkColumn
+    Friend WithEvents lbTotalP As Label
+    Friend WithEvents lbTotal As Label
 End Class

@@ -57,7 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER-RAID;Initial Catalog=Production_AUX;Integrated Security=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER-RAID;Initial Catalog=Production_Aux;Integrated Security=True")>  _
         Public ReadOnly Property Production_AUXConnectionString() As String
             Get
                 Return CType(Me("Production_AUXConnectionString"),String)

@@ -9,61 +9,32 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.CFDI_Detalle' Puede moverla o quitarla según sea necesario.
         Me.CFDI_DetalleTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Detalle)
-        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.InstrumentoMonetario' Puede moverla o quitarla según sea necesario.
         Me.InstrumentoMonetarioTableAdapter.Fill(Me.Production_AUXDataSet.InstrumentoMonetario)
-        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.CFDI_ComplementoPago' Puede moverla o quitarla según sea necesario.
         Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
-        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.Vw_CFDI_FacturasConSaldo' Puede moverla o quitarla según sea necesario.
         Me.Vw_CFDI_FacturasConSaldoTableAdapter.Fill(Me.Production_AUXDataSet.Vw_CFDI_FacturasConSaldo)
-        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.CFDI_Bancos' Puede moverla o quitarla según sea necesario.
         Me.CFDI_BancosTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Bancos)
-        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.Bancos' Puede moverla o quitarla según sea necesario.
         Me.BancosTableAdapter.Fill(Me.Production_AUXDataSet.Bancos)
-        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.Vw_CFDI_SadosFactura' Puede moverla o quitarla según sea necesario.
         Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
-        'TODO: esta línea de código carga datos en la tabla 'Production_AUXDataSet.CFDI_Encabezado' Puede moverla o quitarla según sea necesario.
         Me.CFDI_EncabezadoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Encabezado)
-        'TODO: This line of code loads data into the 'Production_AUXDataSet.Vw_CFDI_SadosFactura1' table. You can move, or remove it, as needed.
         Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
-        'TODO: This line of code loads data into the 'Production_AUXDataSet.CFDI_Bancos' table. You can move, or remove it, as needed.
         Me.CFDI_BancosTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Bancos)
         DateTimePicker1.MaxDate = Date.Now
-        DateTimePicker1.MinDate = Date.Now.AddHours(-72)
+        DateTimePicker1.MinDate = Date.Now.AddDays((Date.Now.Day - 1) * -1).AddMonths(-1)
 
         Dim vFolio As Integer
         Dim vSerie As String
         Dim vDocumento As String
-        'Dim vNPago As String ' =  "0051253a-ac93-4422-ad15-44c3fe5e7dbf"
 
-        'vFolio = CFDI_EncabezadoTableAdapter.SacaFolio()
-        'TextBox1.Text = vFolio
 
-        'tboxnpago.Text = CFDI_ComplementoPagoTableAdapter.SacarNoPago(TextBox10.Text)
-
-        'vDocumento = CFDI_EncabezadoTableAdapter.SacaDocumento(vFolio, vSerie)
-        'TextBox10.Text = vDocumento
-
-        'TODO: This line of code loads data into the 'Production_AUXDataSet.Bancos' table. You can move, or remove it, as needed.
         Me.BancosTableAdapter.Fill(Me.Production_AUXDataSet.Bancos)
-        'TODO: This line of code loads data into the 'Production_AUXDataSet.InstrumentoMonetario' table. You can move, or remove it, as needed.
         Me.InstrumentoMonetarioTableAdapter.Fill(Me.Production_AUXDataSet.InstrumentoMonetario)
-        'TODO: This line of code loads data into the 'Production_AUXDataSet.CFDI_ComplementoPago' table. You can move, or remove it, as needed.
         Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
-        'TODO: This line of code loads data into the 'Production_AUXDataSet.Vw_CFDI_FacturasConSaldo1' table. You can move, or remove it, as needed.
         Me.Vw_CFDI_FacturasConSaldoTableAdapter.Fill(Me.Production_AUXDataSet.Vw_CFDI_FacturasConSaldo)
-        'TODO: This line of code loads data into the 'Production_AUXDataSet.Vw_CFDI_SadosFactura' table. You can move, or remove it, as needed.
         Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
-        'TODO: This line of code loads data into the 'Production_AUXDataSet.CFDI_ComplementoPago' table. You can move, or remove it, as needed.
         Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
-        'TODO: This line of code loads data into the 'Production_AUXDataSet.Vw_CFDI_FacturasConSaldo' table. You can move, or remove it, as needed.
-        ''Me.Vw_CFDI_FacturasConSaldoTableAdapter.Fill(Me.Production_AUXDataSet.Vw_CFDI_FacturasConSaldo)
-        'TODO: This line of code loads data into the 'Production_AUXDataSet.Vw_CFDI_SadosFactura' table. You can move, or remove it, as needed.
         Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
-        'TODO: This line of code loads data into the 'Production_AUXDataSet.CFDI_Encabezado' table. You can move, or remove it, as needed.
         Me.CFDI_EncabezadoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Encabezado)
-        'Me.CFDI_EncabezadoTableAdapter.FillBySaldo()
 
     End Sub
 
@@ -75,9 +46,6 @@ Public Class Form1
         Dim vMes As String = DateTimePicker1.MinDate.Month
         Dim vDia As String = DateTimePicker1.MinDate.Day
         Dim vfecha As String = vAnio + "/" + vMes + "/" + vDia + " T12:00:00"
-        'MsgBox("Fecha: " + vfecha)
-
-
 
         Dim vFolio As Integer
             Dim vSerie As String
@@ -87,18 +55,10 @@ Public Class Form1
             Dim SpeiSello As String = ""
             Dim vNumeroPago As String = ""
 
-        'vFolio = TextBox1.Text '16
-        'vSerie = TextBox8.Text  '"MDM3"
-
-        'vFolio = CFDI_EncabezadoTableAdapter.SacaFolio()
-        'TextBox1.Text = vFolio
-
-        'vSerie = "REPMDM"
         '  ENCABEZADO
         Dim ROWheader As Production_AUXDataSet.CFDI_EncabezadoRow
             ROWheader = Production_AUXDataSet.CFDI_Encabezado.NewCFDI_EncabezadoRow()
 
-        '        TasaIVACliente = taCli.SacaTasaIVACliente(Datos(1))
         If rbFinagil.Checked = True Then
             ROWheader._1_Folio = CFDI_EncabezadoTableAdapter.SacaFolio()
             ROWheader._2_Nombre_Emisor = "FINAGIL S.A. DE C.V, SOFOM E.N.R"
@@ -131,11 +91,8 @@ Public Class Form1
             ROWheader._58_TipoCFD = "FA"
             ROWheader._83_Cod_Moneda = "XXX"
             ROWheader._113_Misc01 = "[CPG_FINAGIL]"
-            'ROWheader._114_Misc02 = Vw_CFDI_FacturasConSaldoBindingSource.Current("114_Misc02")
-            'ROWheader._115_Misc03 = Vw_CFDI_FacturasConSaldoBindingSource.Current("115_Misc03")
             ROWheader._132_Misc20 = "[CPG]"
             ROWheader._144_Misc32 = "P01"
-            'ROWheader._162_Misc50 = Vw_CFDI_FacturasConSaldoBindingSource.Current("162_Misc50")
             ROWheader._167_RegimentFiscal = "601"
             ROWheader._180_LugarExpedicion = "50070"
             ROWheader._190_Metodo_Pago = ""
@@ -174,11 +131,8 @@ Public Class Form1
             ROWheader._58_TipoCFD = "FA"
             ROWheader._83_Cod_Moneda = "XXX"
             ROWheader._113_Misc01 = "[CPG_ARFIN]"
-            'ROWheader._114_Misc02 = Vw_CFDI_FacturasConSaldoBindingSource.Current("114_Misc02")
-            'ROWheader._115_Misc03 = Vw_CFDI_FacturasConSaldoBindingSource.Current("115_Misc03")
             ROWheader._132_Misc20 = "[CPG]"
             ROWheader._144_Misc32 = "P01"
-            'ROWheader._162_Misc50 = Vw_CFDI_FacturasConSaldoBindingSource.Current("162_Misc50")
             ROWheader._167_RegimentFiscal = "601"
             ROWheader._180_LugarExpedicion = "50070"
             ROWheader._190_Metodo_Pago = ""
@@ -192,10 +146,8 @@ Public Class Form1
 
 
         '  DETALLE
-        '  ROWdetail = ProducDS.CFDI_Detalle.NewCFDI_DetalleRow
-
         Dim ROWdetail As Production_AUXDataSet.CFDI_DetalleRow
-            ROWdetail = Production_AUXDataSet.CFDI_Detalle.NewCFDI_DetalleRow()
+        ROWdetail = Production_AUXDataSet.CFDI_Detalle.NewCFDI_DetalleRow()
 
             ROWdetail._1_Linea_Descripcion = "Pago"
             ROWdetail._2_Linea_Cantidad = 1
@@ -233,8 +185,7 @@ Public Class Form1
             End If
 
             ROWcomplemento._13_DetalleAux_Misc11 = " "      '  Este campo NO debe ir Vacio
-
-            ROWcomplemento._18_DetalleAux_Misc16 = ""
+        ROWcomplemento._18_DetalleAux_Misc16 = ""
         ROWcomplemento._19_DetalleAux_Folio = ROWheader._1_Folio
         ROWcomplemento._20_DetalleAux_Serie = ROWheader._27_Serie_Comprobante
 
@@ -267,7 +218,6 @@ Public Class Form1
 
         For Each row As DataGridViewRow In dgDoctosPagos.Rows
             '  COMPLEMENTO DE PAGO  Registro 3
-
             Dim cont As Integer = row.Index
             ROWcomplemento = Production_AUXDataSet.CFDI_ComplementoPago.NewCFDI_ComplementoPagoRow()
 
@@ -281,7 +231,6 @@ Public Class Form1
             ROWcomplemento._8_DetalleAux_Misc06 = Me.dgDoctosPagos.Item("dgTCambio", cont).Value
             ROWcomplemento._9_DetalleAux_Misc07 = Me.dgDoctosPagos.Item("dgMPago", cont).Value
 
-            'vNumeroPago = CFDI_ComplementoPagoTableAdapter.SacarNoPago(Me.dgDoctosPagos.Item("dgUUID", cont).Value) 'txbIdDocumento.Text)
             ROWcomplemento._10_DetalleAux_Misc08 = Me.dgDoctosPagos.Item("dgParcialidad", cont).Value
 
             ROWcomplemento._11_DetalleAux_Misc09 = Me.dgDoctosPagos.Item("dgSaldo", cont).Value
@@ -298,7 +247,6 @@ Public Class Form1
 
         MsgBox("Se guardaron Datos de Factura en BD")
         dgDoctosPagos.Rows.Clear()
-        'Vw_CFDI_FacturasConSaldo1DataGridView.Rows.Clear()
         Me.Vw_CFDI_FacturasConSaldoTableAdapter.Fill(Me.Production_AUXDataSet.Vw_CFDI_FacturasConSaldo)
         totalPago = 0
 
@@ -330,7 +278,6 @@ Public Class Form1
             Label2.Visible = False
             Label15.Visible = False
             txbCtaOrdenante.Visible = False
-            'TextBox6.Visible = False
             txbRfcCtaOrdenante.Visible = False
         End If
     End Sub
@@ -350,9 +297,7 @@ Public Class Form1
         Dim vTipoCambio As String
         Dim vMoneda As String
         vMoneda = cbMoneda.ValueMember
-        'MsgBox("Moneda De la factura: " + vMoneda)
         vTipoCambio = CFDI_EncabezadoTableAdapter.SacaTipoCamnbio(vfechatc, vMoneda)
-        'MsgBox("Tipo de Cambio: " + vTipoCambio)
     End Sub
 
     Sub Filtros()

@@ -104,6 +104,8 @@ Partial Class Form1
         Me.lbMoneda = New System.Windows.Forms.Label()
         Me.lbTotalP = New System.Windows.Forms.Label()
         Me.lbTotal = New System.Windows.Forms.Label()
+        Me.btnLoadXML = New System.Windows.Forms.Button()
+        Me.fdBwCargaXML = New System.Windows.Forms.FolderBrowserDialog()
         SaldoFacturaLabel = New System.Windows.Forms.Label()
         _83_Cod_MonedaLabel = New System.Windows.Forms.Label()
         FolioFiscalLabel = New System.Windows.Forms.Label()
@@ -732,6 +734,7 @@ Partial Class Form1
         '
         'cbMoneda
         '
+        Me.cbMoneda.Enabled = False
         Me.cbMoneda.FormattingEnabled = True
         Me.cbMoneda.Items.AddRange(New Object() {"MXN", "USD"})
         Me.cbMoneda.Location = New System.Drawing.Point(519, 315)
@@ -767,12 +770,23 @@ Partial Class Form1
         Me.lbTotal.TabIndex = 65
         Me.lbTotal.Text = "0"
         '
+        'btnLoadXML
+        '
+        Me.btnLoadXML.Enabled = False
+        Me.btnLoadXML.Location = New System.Drawing.Point(22, 54)
+        Me.btnLoadXML.Name = "btnLoadXML"
+        Me.btnLoadXML.Size = New System.Drawing.Size(75, 23)
+        Me.btnLoadXML.TabIndex = 66
+        Me.btnLoadXML.Text = "Cargar XML"
+        Me.btnLoadXML.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1236, 393)
+        Me.Controls.Add(Me.btnLoadXML)
         Me.Controls.Add(Me.lbTotal)
         Me.Controls.Add(Me.lbTotalP)
         Me.Controls.Add(Me.lbMoneda)
@@ -937,4 +951,6 @@ Partial Class Form1
     Friend WithEvents dgElimina As DataGridViewLinkColumn
     Friend WithEvents lbTotalP As Label
     Friend WithEvents lbTotal As Label
+    Friend WithEvents btnLoadXML As Button
+    Friend WithEvents fdBwCargaXML As FolderBrowserDialog
 End Class

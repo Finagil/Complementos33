@@ -106,6 +106,8 @@ Partial Class Form1
         Me.lbTotal = New System.Windows.Forms.Label()
         Me.btnLoadXML = New System.Windows.Forms.Button()
         Me.fdBwCargaXML = New System.Windows.Forms.FolderBrowserDialog()
+        Me.dtpFechaEmision = New System.Windows.Forms.DateTimePicker()
+        Me.lblFechaEmision = New System.Windows.Forms.Label()
         SaldoFacturaLabel = New System.Windows.Forms.Label()
         _83_Cod_MonedaLabel = New System.Windows.Forms.Label()
         FolioFiscalLabel = New System.Windows.Forms.Label()
@@ -192,7 +194,7 @@ Partial Class Form1
         Me.txbCtaOrdenante.Location = New System.Drawing.Point(373, 358)
         Me.txbCtaOrdenante.Name = "txbCtaOrdenante"
         Me.txbCtaOrdenante.Size = New System.Drawing.Size(116, 20)
-        Me.txbCtaOrdenante.TabIndex = 9
+        Me.txbCtaOrdenante.TabIndex = 14
         '
         'TextBox7
         '
@@ -201,7 +203,7 @@ Partial Class Form1
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.ReadOnly = True
         Me.TextBox7.Size = New System.Drawing.Size(25, 20)
-        Me.TextBox7.TabIndex = 9
+        Me.TextBox7.TabIndex = 70
         '
         'InstrumentoMonetarioBindingSource
         '
@@ -213,7 +215,7 @@ Partial Class Form1
         Me.Button2.Location = New System.Drawing.Point(977, 315)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(150, 53)
-        Me.Button2.TabIndex = 12
+        Me.Button2.TabIndex = 16
         Me.Button2.Text = "Guardar Datos y Generar Factura"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -244,7 +246,7 @@ Partial Class Form1
         Me.CmbFormaPago.Location = New System.Drawing.Point(133, 316)
         Me.CmbFormaPago.Name = "CmbFormaPago"
         Me.CmbFormaPago.Size = New System.Drawing.Size(208, 21)
-        Me.CmbFormaPago.TabIndex = 5
+        Me.CmbFormaPago.TabIndex = 9
         Me.CmbFormaPago.ValueMember = "SAT"
         '
         'ComboBox2
@@ -255,7 +257,7 @@ Partial Class Form1
         Me.ComboBox2.Location = New System.Drawing.Point(378, 315)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(135, 21)
-        Me.ComboBox2.TabIndex = 6
+        Me.ComboBox2.TabIndex = 10
         Me.ComboBox2.ValueMember = "Banco"
         Me.ComboBox2.Visible = False
         '
@@ -272,7 +274,7 @@ Partial Class Form1
         Me.DateTimePicker1.MinDate = New Date(2017, 11, 24, 0, 0, 0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(106, 20)
-        Me.DateTimePicker1.TabIndex = 4
+        Me.DateTimePicker1.TabIndex = 8
         Me.DateTimePicker1.Value = New Date(2017, 11, 24, 0, 0, 0, 0)
         '
         'Label8
@@ -363,7 +365,7 @@ Partial Class Form1
         Me.txbRfcCtaOrdenante.Name = "txbRfcCtaOrdenante"
         Me.txbRfcCtaOrdenante.ReadOnly = True
         Me.txbRfcCtaOrdenante.Size = New System.Drawing.Size(132, 20)
-        Me.txbRfcCtaOrdenante.TabIndex = 33
+        Me.txbRfcCtaOrdenante.TabIndex = 13
         '
         'CFDI_BancosBindingSource
         '
@@ -378,7 +380,7 @@ Partial Class Form1
         Me.ComboBox3.Location = New System.Drawing.Point(21, 358)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(208, 21)
-        Me.ComboBox3.TabIndex = 8
+        Me.ComboBox3.TabIndex = 12
         Me.ComboBox3.ValueMember = "SAT"
         '
         'DataGridViewTextBoxColumn16
@@ -446,7 +448,7 @@ Partial Class Form1
         Me.txbrpago.Location = New System.Drawing.Point(495, 358)
         Me.txbrpago.Name = "txbrpago"
         Me.txbrpago.Size = New System.Drawing.Size(100, 20)
-        Me.txbrpago.TabIndex = 11
+        Me.txbrpago.TabIndex = 15
         '
         'Label19
         '
@@ -462,7 +464,7 @@ Partial Class Form1
         Me.TxtSeriefil.Location = New System.Drawing.Point(203, 22)
         Me.TxtSeriefil.Name = "TxtSeriefil"
         Me.TxtSeriefil.Size = New System.Drawing.Size(51, 20)
-        Me.TxtSeriefil.TabIndex = 1
+        Me.TxtSeriefil.TabIndex = 2
         '
         'Label12
         '
@@ -487,7 +489,7 @@ Partial Class Form1
         Me.Txtfoliofil.Location = New System.Drawing.Point(260, 22)
         Me.Txtfoliofil.Name = "Txtfoliofil"
         Me.Txtfoliofil.Size = New System.Drawing.Size(77, 20)
-        Me.Txtfoliofil.TabIndex = 2
+        Me.Txtfoliofil.TabIndex = 3
         '
         'CFDI_EncabezadoTableAdapter
         '
@@ -569,7 +571,7 @@ Partial Class Form1
         Me.txtPago.Location = New System.Drawing.Point(882, 22)
         Me.txtPago.Name = "txtPago"
         Me.txtPago.Size = New System.Drawing.Size(100, 20)
-        Me.txtPago.TabIndex = 3
+        Me.txtPago.TabIndex = 4
         '
         'dgDoctosPagos
         '
@@ -581,7 +583,7 @@ Partial Class Form1
         Me.dgDoctosPagos.Name = "dgDoctosPagos"
         Me.dgDoctosPagos.ReadOnly = True
         Me.dgDoctosPagos.Size = New System.Drawing.Size(1199, 194)
-        Me.dgDoctosPagos.TabIndex = 51
+        Me.dgDoctosPagos.TabIndex = 7
         '
         'dgUUID
         '
@@ -740,7 +742,7 @@ Partial Class Form1
         Me.cbMoneda.Location = New System.Drawing.Point(519, 315)
         Me.cbMoneda.Name = "cbMoneda"
         Me.cbMoneda.Size = New System.Drawing.Size(73, 21)
-        Me.cbMoneda.TabIndex = 7
+        Me.cbMoneda.TabIndex = 11
         Me.cbMoneda.Text = "MXN"
         '
         'lbMoneda
@@ -773,12 +775,28 @@ Partial Class Form1
         'btnLoadXML
         '
         Me.btnLoadXML.Enabled = False
-        Me.btnLoadXML.Location = New System.Drawing.Point(22, 54)
+        Me.btnLoadXML.Location = New System.Drawing.Point(17, 54)
         Me.btnLoadXML.Name = "btnLoadXML"
         Me.btnLoadXML.Size = New System.Drawing.Size(75, 23)
-        Me.btnLoadXML.TabIndex = 66
+        Me.btnLoadXML.TabIndex = 5
         Me.btnLoadXML.Text = "Cargar XML"
         Me.btnLoadXML.UseVisualStyleBackColor = True
+        '
+        'dtpFechaEmision
+        '
+        Me.dtpFechaEmision.Location = New System.Drawing.Point(201, 57)
+        Me.dtpFechaEmision.Name = "dtpFechaEmision"
+        Me.dtpFechaEmision.Size = New System.Drawing.Size(200, 20)
+        Me.dtpFechaEmision.TabIndex = 5
+        '
+        'lblFechaEmision
+        '
+        Me.lblFechaEmision.AutoSize = True
+        Me.lblFechaEmision.Location = New System.Drawing.Point(120, 63)
+        Me.lblFechaEmision.Name = "lblFechaEmision"
+        Me.lblFechaEmision.Size = New System.Drawing.Size(78, 13)
+        Me.lblFechaEmision.TabIndex = 67
+        Me.lblFechaEmision.Text = "Fecha emisión:"
         '
         'Form1
         '
@@ -786,6 +804,8 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1236, 393)
+        Me.Controls.Add(Me.lblFechaEmision)
+        Me.Controls.Add(Me.dtpFechaEmision)
         Me.Controls.Add(Me.btnLoadXML)
         Me.Controls.Add(Me.lbTotal)
         Me.Controls.Add(Me.lbTotalP)
@@ -953,4 +973,6 @@ Partial Class Form1
     Friend WithEvents lbTotal As Label
     Friend WithEvents btnLoadXML As Button
     Friend WithEvents fdBwCargaXML As FolderBrowserDialog
+    Friend WithEvents dtpFechaEmision As DateTimePicker
+    Friend WithEvents lblFechaEmision As Label
 End Class

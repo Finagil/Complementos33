@@ -23,6 +23,9 @@ Public Class Form1
         DateTimePicker1.MaxDate = Date.Now
         DateTimePicker1.MinDate = Date.Now.AddDays((Date.Now.Day - 1) * -1).AddMonths(-1)
 
+        dtpFechaEmision.MaxDate = Date.Now
+        dtpFechaEmision.MinDate = Date.Now.AddDays(-3)
+
         Dim vFolio As Integer
         Dim vSerie As String
         Dim vDocumento As String
@@ -46,7 +49,7 @@ Public Class Form1
         Dim vAnio As String = DateTimePicker1.MinDate.Year
         Dim vMes As String = DateTimePicker1.MinDate.Month
         Dim vDia As String = DateTimePicker1.MinDate.Day
-        Dim vfecha As String = vAnio + "/" + vMes + "/" + vDia + " T12:00:00"
+        Dim vfecha As String = vAnio.Trim + "/" + vMes.Trim + "/" + vDia.Trim + " T12:00:00"
 
         Dim vFolio As Integer
         Dim vSerie As String
@@ -78,8 +81,8 @@ Public Class Form1
             ROWheader._26_Version = "3.3"
             ROWheader._27_Serie_Comprobante = "REP" ' "MDM"
             ROWheader._29_FormaPago = "" 'FormaPago '"27" '27 A satisfacción del acreedor
-            ROWheader._30_Fecha = DateTimePicker1.Value.Date.ToString("dd/MM/yyyy")
-            ROWheader._31_Hora = DateTimePicker1.Value.ToString("hh:mm:ss")
+            ROWheader._30_Fecha = dtpFechaEmision.Value.Date.ToString("dd/MM/yyyy")
+            ROWheader._31_Hora = dtpFechaEmision.Value.ToString("hh:mm:ss")
             ROWheader._41_Dom_LugarExpide_codigoPostal = "50070"
 
             ROWheader._42_Nombre_Receptor = TextBox2.Text ' CFDI_EncabezadoBindingSource.Current("_42_Nombre_Receptor")
@@ -91,13 +94,22 @@ Public Class Form1
             ROWheader._57_Estado = "1"
             ROWheader._58_TipoCFD = "FA"
             ROWheader._83_Cod_Moneda = "XXX"
+            ROWheader._97_Condiciones_Pago = ""
+            ROWheader._100_Letras_Monto_Total = ""
             ROWheader._113_Misc01 = "[CPG_FINAGIL]"
+            ROWheader._114_Misc02 = ""
             ROWheader._132_Misc20 = "[CPG]"
             ROWheader._144_Misc32 = "P01"
+            ROWheader._157_Misc45 = ""
+            ROWheader._158_Misc46 = ""
+            ROWheader._159_Misc47 = ""
+            ROWheader._162_Misc50 = ""
             ROWheader._167_RegimentFiscal = "601"
             ROWheader._180_LugarExpedicion = "50070"
             ROWheader._190_Metodo_Pago = ""
             ROWheader._191_Efecto_Comprobante = "P"
+            ROWheader._192_Monto_TotalImp_Retenidos = 0
+            ROWheader._193_Monto_TotalImp_Trasladados = 0
             ROWheader.Encabezado_Procesado = False
             Me.CFDI_EncabezadoTableAdapter.ConsumeFolio()
         Else
@@ -118,8 +130,8 @@ Public Class Form1
             ROWheader._26_Version = "3.3"
             ROWheader._27_Serie_Comprobante = "REPA" ' "MDM"
             ROWheader._29_FormaPago = "" 'FormaPago '"27" '27 A satisfacción del acreedor
-            ROWheader._30_Fecha = DateTimePicker1.Value.Date.ToString("dd/MM/yyyy")
-            ROWheader._31_Hora = DateTimePicker1.Value.ToString("hh:mm:ss")
+            ROWheader._30_Fecha = dtpFechaEmision.Value.Date.ToString("dd/MM/yyyy")
+            ROWheader._31_Hora = dtpFechaEmision.Value.ToString("hh:mm:ss")
             ROWheader._41_Dom_LugarExpide_codigoPostal = "50070"
 
             ROWheader._42_Nombre_Receptor = TextBox2.Text ' CFDI_EncabezadoBindingSource.Current("_42_Nombre_Receptor")
@@ -131,13 +143,22 @@ Public Class Form1
             ROWheader._57_Estado = "1"
             ROWheader._58_TipoCFD = "FA"
             ROWheader._83_Cod_Moneda = "XXX"
+            ROWheader._97_Condiciones_Pago = ""
+            ROWheader._100_Letras_Monto_Total = ""
             ROWheader._113_Misc01 = "[CPG_ARFIN]"
+            ROWheader._114_Misc02 = ""
             ROWheader._132_Misc20 = "[CPG]"
             ROWheader._144_Misc32 = "P01"
+            ROWheader._157_Misc45 = ""
+            ROWheader._158_Misc46 = ""
+            ROWheader._159_Misc47 = ""
+            ROWheader._162_Misc50 = ""
             ROWheader._167_RegimentFiscal = "601"
             ROWheader._180_LugarExpedicion = "50070"
             ROWheader._190_Metodo_Pago = ""
             ROWheader._191_Efecto_Comprobante = "P"
+            ROWheader._192_Monto_TotalImp_Retenidos = 0
+            ROWheader._193_Monto_TotalImp_Trasladados = 0
             ROWheader.Encabezado_Procesado = False
             Me.CFDI_EncabezadoTableAdapter.ConsumeFolioAr()
         End If
@@ -173,7 +194,7 @@ Public Class Form1
         ROWcomplemento._4_DetalleAux_Misc02 = "1.0"
         ROWcomplemento._5_DetalleAux_Misc03 = vfecha  ' DateTimePicker1.MinDate  '  Fecha en Formato  AAMMDD
         ROWcomplemento._6_DetalleAux_Misc04 = CmbFormaPago.SelectedValue
-        ROWcomplemento._7_DetalleAux_Misc05 = cbMoneda.ValueMember
+        ROWcomplemento._7_DetalleAux_Misc05 = cbMoneda.Text
         ROWcomplemento._8_DetalleAux_Misc06 = ""
         ROWcomplemento._9_DetalleAux_Misc07 = totalPago
         ROWcomplemento._10_DetalleAux_Misc08 = txbrpago.Text ' Referencia de Pago
@@ -199,9 +220,9 @@ Public Class Form1
         ROWcomplemento._1_DetalleAux_Tipo = "CPG"
         ROWcomplemento._2_DetalleAux_DescTipo = "Pago"
         ROWcomplemento._3_DetalleAux_Misc01 = "HD"
-        ROWcomplemento._4_DetalleAux_Misc02 = ""
-        ROWcomplemento._5_DetalleAux_Misc03 = "" 'txbCtaOrdenante.Text
-        ROWcomplemento._6_DetalleAux_Misc04 = "" 'lblRfcCtaBeneficiario.Text
+        ROWcomplemento._4_DetalleAux_Misc02 = txbCtaOrdenante.Text.Trim
+        ROWcomplemento._5_DetalleAux_Misc03 = lblRfcCtaBeneficiario.Text.Trim 'txbCtaOrdenante.Text
+        ROWcomplemento._6_DetalleAux_Misc04 = lblCtaBeneficiario.Text.Trim 'lblRfcCtaBeneficiario.Text
         ROWcomplemento._7_DetalleAux_Misc05 = "" 'lblCtaBeneficiario.Text
         ROWcomplemento._8_DetalleAux_Misc06 = Spei
         ROWcomplemento._9_DetalleAux_Misc07 = SpeiCert
@@ -378,7 +399,7 @@ Public Class Form1
         Me.TxtSeriefil.Text = ""
         Me.Txtfoliofil.Text = ""
         Me.NoPagosTextBox.Text = ""
-        Me.TextBox2.Text = ""
+        'Me.TextBox2.Text = ""
         Me.FolioFiscalTextBox.Text = ""
     End Sub
 
@@ -499,16 +520,34 @@ Public Class Form1
             ROWheader_XML._58_TipoCFD = "FA"
             ROWheader_XML._191_Efecto_Comprobante = "I"
             ROWheader_XML.Encabezado_Procesado = True
+
+
+            'Agrega detalle de factura externa
+            Dim ROWdetail_XML As Production_AUXDataSet.CFDI_DetalleRow
+            ROWdetail_XML = Production_AUXDataSet.CFDI_Detalle.NewCFDI_DetalleRow()
+
+            ROWdetail_XML._1_Linea_Descripcion = "detalle generico para facturas no emitidas en facturador externo"
+            ROWdetail_XML._2_Linea_Cantidad = 1
+            ROWdetail_XML._3_Linea_Unidad = "ACT"
+            ROWdetail_XML._4_Linea_PrecioUnitario = 0
+            ROWdetail_XML._5_Linea_Importe = 0
+            ROWdetail_XML._16_Linea_Cod_Articulo = "01010101"
+            ROWdetail_XML.Detalle_Folio = ROWheader_XML._1_Folio
+            ROWdetail_XML.Detalle_Serie = ROWheader_XML._27_Serie_Comprobante
             Try
                 If ROWheader_XML._27_Serie_Comprobante = "S" And ROWheader_XML._3_RFC_Emisor = "SAR951230N5A" Then
                     Me.Production_AUXDataSet.CFDI_Encabezado.Rows.Add(ROWheader_XML)
                     Me.CFDI_EncabezadoTableAdapter.Update(Me.Production_AUXDataSet.CFDI_Encabezado)
+
+                    Me.Production_AUXDataSet.CFDI_Detalle.Rows.Add(ROWdetail_XML)
+                    Me.CFDI_DetalleTableAdapter.Update(Me.Production_AUXDataSet.CFDI_Detalle)
                 Else
                     MsgBox("RFC y Serie no permitidas", MsgBoxStyle.Exclamation)
                 End If
             Catch ex As Exception
                 MsgBox(ex.ToString, MsgBoxStyle.Exclamation)
             End Try
+
         Next
     End Sub
 End Class

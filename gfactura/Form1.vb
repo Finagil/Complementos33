@@ -192,7 +192,7 @@ Public Class Form1
         ROWcomplemento._2_DetalleAux_DescTipo = "Pagos"
         ROWcomplemento._3_DetalleAux_Misc01 = "HD"
         ROWcomplemento._4_DetalleAux_Misc02 = "1.0"
-        ROWcomplemento._5_DetalleAux_Misc03 = vfecha  ' DateTimePicker1.MinDate  '  Fecha en Formato  AAMMDD
+        ROWcomplemento._5_DetalleAux_Misc03 = DateTimePicker1.Value.Date.ToString("yyyy/MM/dd") + "T12:00:00" 'vfecha  ' DateTimePicker1.MinDate  '  Fecha en Formato  AAMMDD
         ROWcomplemento._6_DetalleAux_Misc04 = CmbFormaPago.SelectedValue
         ROWcomplemento._7_DetalleAux_Misc05 = cbMoneda.Text
         ROWcomplemento._8_DetalleAux_Misc06 = ""

@@ -351,7 +351,7 @@ Public Class Form1
     Private Sub Txtfoliofil_KeyDown(sender As Object, e As KeyEventArgs) Handles Txtfoliofil.KeyDown
         If e.KeyCode = Keys.Enter Then
             If rbArfin.Checked = True Then
-                If TxtSeriefil.Text.ToUpper = "SA" Or TxtSeriefil.Text.ToUpper = "S" Then
+                If TxtSeriefil.Text.ToUpper = "SA" Or TxtSeriefil.Text.ToUpper = "SAA" Or TxtSeriefil.Text.ToUpper = "S" Then
                     Filtros()
                     Me.txtPago.Focus()
                 Else

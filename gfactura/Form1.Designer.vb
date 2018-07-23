@@ -108,6 +108,15 @@ Partial Class Form1
         Me.fdBwCargaXML = New System.Windows.Forms.FolderBrowserDialog()
         Me.dtpFechaEmision = New System.Windows.Forms.DateTimePicker()
         Me.lblFechaEmision = New System.Windows.Forms.Label()
+        Me.chkSPEI = New System.Windows.Forms.CheckBox()
+        Me.gbxSPEI = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnOcultarSPEI = New System.Windows.Forms.Button()
+        Me.txtSPEISello = New System.Windows.Forms.TextBox()
+        Me.txtSPEICad = New System.Windows.Forms.TextBox()
+        Me.txtSPEICert = New System.Windows.Forms.TextBox()
         SaldoFacturaLabel = New System.Windows.Forms.Label()
         _83_Cod_MonedaLabel = New System.Windows.Forms.Label()
         FolioFiscalLabel = New System.Windows.Forms.Label()
@@ -123,6 +132,7 @@ Partial Class Form1
         CType(Me.CFDI_DetalleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgDoctosPagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbEmisor.SuspendLayout()
+        Me.gbxSPEI.SuspendLayout()
         Me.SuspendLayout()
         '
         'SaldoFacturaLabel
@@ -246,7 +256,7 @@ Partial Class Form1
         Me.CmbFormaPago.FormattingEnabled = True
         Me.CmbFormaPago.Location = New System.Drawing.Point(133, 316)
         Me.CmbFormaPago.Name = "CmbFormaPago"
-        Me.CmbFormaPago.Size = New System.Drawing.Size(208, 21)
+        Me.CmbFormaPago.Size = New System.Drawing.Size(144, 21)
         Me.CmbFormaPago.TabIndex = 9
         Me.CmbFormaPago.ValueMember = "SAT"
         '
@@ -800,12 +810,104 @@ Partial Class Form1
         Me.lblFechaEmision.TabIndex = 67
         Me.lblFechaEmision.Text = "Fecha emisión:"
         '
+        'chkSPEI
+        '
+        Me.chkSPEI.AutoSize = True
+        Me.chkSPEI.Location = New System.Drawing.Point(281, 318)
+        Me.chkSPEI.Name = "chkSPEI"
+        Me.chkSPEI.Size = New System.Drawing.Size(56, 17)
+        Me.chkSPEI.TabIndex = 71
+        Me.chkSPEI.Text = "SPEI?"
+        Me.chkSPEI.UseVisualStyleBackColor = True
+        '
+        'gbxSPEI
+        '
+        Me.gbxSPEI.Controls.Add(Me.Label6)
+        Me.gbxSPEI.Controls.Add(Me.Label5)
+        Me.gbxSPEI.Controls.Add(Me.Label3)
+        Me.gbxSPEI.Controls.Add(Me.btnOcultarSPEI)
+        Me.gbxSPEI.Controls.Add(Me.txtSPEISello)
+        Me.gbxSPEI.Controls.Add(Me.txtSPEICad)
+        Me.gbxSPEI.Controls.Add(Me.txtSPEICert)
+        Me.gbxSPEI.Location = New System.Drawing.Point(399, 124)
+        Me.gbxSPEI.Name = "gbxSPEI"
+        Me.gbxSPEI.Size = New System.Drawing.Size(458, 142)
+        Me.gbxSPEI.TabIndex = 72
+        Me.gbxSPEI.TabStop = False
+        Me.gbxSPEI.Text = "Datos SPEI:"
+        Me.gbxSPEI.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(7, 84)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(33, 13)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Sello:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(7, 58)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(47, 13)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Cadena:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(7, 32)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(60, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Certificado:"
+        '
+        'btnOcultarSPEI
+        '
+        Me.btnOcultarSPEI.Location = New System.Drawing.Point(366, 111)
+        Me.btnOcultarSPEI.Name = "btnOcultarSPEI"
+        Me.btnOcultarSPEI.Size = New System.Drawing.Size(75, 23)
+        Me.btnOcultarSPEI.TabIndex = 3
+        Me.btnOcultarSPEI.Text = "Aceptar"
+        Me.btnOcultarSPEI.UseVisualStyleBackColor = True
+        '
+        'txtSPEISello
+        '
+        Me.txtSPEISello.Location = New System.Drawing.Point(73, 81)
+        Me.txtSPEISello.Multiline = True
+        Me.txtSPEISello.Name = "txtSPEISello"
+        Me.txtSPEISello.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtSPEISello.Size = New System.Drawing.Size(368, 20)
+        Me.txtSPEISello.TabIndex = 2
+        '
+        'txtSPEICad
+        '
+        Me.txtSPEICad.Location = New System.Drawing.Point(73, 55)
+        Me.txtSPEICad.Multiline = True
+        Me.txtSPEICad.Name = "txtSPEICad"
+        Me.txtSPEICad.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtSPEICad.Size = New System.Drawing.Size(368, 20)
+        Me.txtSPEICad.TabIndex = 1
+        '
+        'txtSPEICert
+        '
+        Me.txtSPEICert.Location = New System.Drawing.Point(73, 29)
+        Me.txtSPEICert.Multiline = True
+        Me.txtSPEICert.Name = "txtSPEICert"
+        Me.txtSPEICert.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtSPEICert.Size = New System.Drawing.Size(368, 20)
+        Me.txtSPEICert.TabIndex = 0
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1236, 393)
+        Me.Controls.Add(Me.gbxSPEI)
+        Me.Controls.Add(Me.chkSPEI)
         Me.Controls.Add(Me.lblFechaEmision)
         Me.Controls.Add(Me.dtpFechaEmision)
         Me.Controls.Add(Me.btnLoadXML)
@@ -868,6 +970,8 @@ Partial Class Form1
         CType(Me.dgDoctosPagos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbEmisor.ResumeLayout(False)
         Me.gbEmisor.PerformLayout()
+        Me.gbxSPEI.ResumeLayout(False)
+        Me.gbxSPEI.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -977,4 +1081,13 @@ Partial Class Form1
     Friend WithEvents fdBwCargaXML As FolderBrowserDialog
     Friend WithEvents dtpFechaEmision As DateTimePicker
     Friend WithEvents lblFechaEmision As Label
+    Friend WithEvents chkSPEI As CheckBox
+    Friend WithEvents gbxSPEI As GroupBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btnOcultarSPEI As Button
+    Friend WithEvents txtSPEISello As TextBox
+    Friend WithEvents txtSPEICad As TextBox
+    Friend WithEvents txtSPEICert As TextBox
 End Class

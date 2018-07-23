@@ -1,6 +1,9 @@
 Imports System.Xml
 Public Class Form1
-
+    Dim Spei As String = ""
+    Dim SpeiCert As String = ""
+    Dim SpeiCadOrg As String = ""
+    Dim SpeiSello As String = ""
     Dim totalPago As Double = 0
     Private Sub CFDI_EncabezadoBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Validate()
@@ -53,10 +56,10 @@ Public Class Form1
 
         Dim vFolio As Integer
         Dim vSerie As String
-        Dim Spei As String = ""
-        Dim SpeiCert As String = ""
-        Dim SpeiCadOrg As String = ""
-        Dim SpeiSello As String = ""
+        'Dim Spei As String = ""
+        'Dim SpeiCert As String = ""
+        'Dim SpeiCadOrg As String = ""
+        'Dim SpeiSello As String = ""
         Dim vNumeroPago As String = ""
 
         '  ENCABEZADO
@@ -223,11 +226,11 @@ Public Class Form1
         ROWcomplemento._4_DetalleAux_Misc02 = txbCtaOrdenante.Text.Trim
         ROWcomplemento._5_DetalleAux_Misc03 = lblRfcCtaBeneficiario.Text.Trim 'txbCtaOrdenante.Text
         ROWcomplemento._6_DetalleAux_Misc04 = lblCtaBeneficiario.Text.Trim 'lblRfcCtaBeneficiario.Text
-        ROWcomplemento._7_DetalleAux_Misc05 = "" 'lblCtaBeneficiario.Text
-        ROWcomplemento._8_DetalleAux_Misc06 = Spei
-        ROWcomplemento._9_DetalleAux_Misc07 = SpeiCert
-        ROWcomplemento._10_DetalleAux_Misc08 = SpeiCadOrg
-        ROWcomplemento._11_DetalleAux_Misc09 = SpeiSello
+        ROWcomplemento._7_DetalleAux_Misc05 = Spei
+        ROWcomplemento._8_DetalleAux_Misc06 = SpeiCert
+        ROWcomplemento._9_DetalleAux_Misc07 = SpeiCadOrg
+        ROWcomplemento._10_DetalleAux_Misc08 = SpeiSello
+        ROWcomplemento._11_DetalleAux_Misc09 = ""
         ROWcomplemento._12_DetalleAux_Misc10 = ""
         ROWcomplemento._13_DetalleAux_Misc11 = "" '"0.0"       '  Este campo NO debe ir Vacio
 
@@ -401,12 +404,20 @@ Public Class Form1
         Me.NoPagosTextBox.Text = ""
         'Me.TextBox2.Text = ""
         Me.FolioFiscalTextBox.Text = ""
+        Spei = ""
+        SpeiCert = ""
+        SpeiCadOrg = ""
+        SpeiSello = ""
     End Sub
 
     Private Sub dgDoctosPagos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgDoctosPagos.CellContentClick
         If e.ColumnIndex = 10 Then
             Me.dgDoctosPagos.Rows.RemoveAt(e.RowIndex)
             Me.TxtSeriefil.Focus()
+            Spei = "01"
+            SpeiCert = txtSPEICert.Text
+            SpeiCadOrg = txtSPEICad.Text
+            SpeiSello = txtSPEISello.Text
         End If
 
     End Sub
@@ -549,5 +560,18 @@ Public Class Form1
             End Try
 
         Next
+    End Sub
+
+    Private Sub chkSPEI_CheckedChanged(sender As Object, e As EventArgs) Handles chkSPEI.CheckedChanged
+        If chkSPEI.Checked = True Then
+            gbxSPEI.Visible = True
+
+        Else
+            gbxSPEI.Visible = False
+        End If
+    End Sub
+
+    Private Sub btnOcultarSPEI_Click(sender As Object, e As EventArgs) Handles btnOcultarSPEI.Click
+        gbxSPEI.Visible = False
     End Sub
 End Class

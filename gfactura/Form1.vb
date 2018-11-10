@@ -42,6 +42,14 @@ Public Class Form1
         Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
         Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
         Me.CFDI_EncabezadoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Encabezado)
+
+        If rbFinagil.Checked = True Then
+            ToolStripLabel1.Text = "REP - " + CFDI_EncabezadoTableAdapter.SacaFolio.ToString
+            txtMails.Text = "lgarcia@finagil.com.mx;lhernandez@finagil.com.mx"
+        Else
+            ToolStripLabel1.Text = "REPA" + CFDI_EncabezadoTableAdapter.SacaFolioArfin.ToString
+            txtMails.Text = "lgarcia@finagil.com.mx;roberto.zarza@finagil.com.mx"
+        End If
         limpiar_1()
     End Sub
 
@@ -106,7 +114,7 @@ Public Class Form1
             ROWheader._157_Misc45 = ""
             ROWheader._158_Misc46 = ""
             ROWheader._159_Misc47 = ""
-            ROWheader._162_Misc50 = ""
+            ROWheader._162_Misc50 = txtMails.Text.Trim
             ROWheader._167_RegimentFiscal = "601"
             ROWheader._180_LugarExpedicion = "50070"
             ROWheader._190_Metodo_Pago = ""
@@ -155,7 +163,7 @@ Public Class Form1
             ROWheader._157_Misc45 = ""
             ROWheader._158_Misc46 = ""
             ROWheader._159_Misc47 = ""
-            ROWheader._162_Misc50 = ""
+            ROWheader._162_Misc50 = txtMails.Text.Trim
             ROWheader._167_RegimentFiscal = "601"
             ROWheader._180_LugarExpedicion = "50070"
             ROWheader._190_Metodo_Pago = ""
@@ -201,7 +209,7 @@ Public Class Form1
         ROWcomplemento._8_DetalleAux_Misc06 = ""
         ROWcomplemento._9_DetalleAux_Misc07 = totalPago
         ROWcomplemento._10_DetalleAux_Misc08 = txbrpago.Text ' Referencia de Pago
-        If TextBox7.Text = "03" Then
+        If TextBox7.Text = "03" And cbDatosBancarios.Checked = True Then
             ROWcomplemento._11_DetalleAux_Misc09 = txbRfcCtaOrdenante.Text '  RFC Cta Ordenante
             ROWcomplemento._12_DetalleAux_Misc10 = ComboBox3.Text  ' Nombre Banco Ordenante
         Else
@@ -223,9 +231,15 @@ Public Class Form1
         ROWcomplemento._1_DetalleAux_Tipo = "CPG"
         ROWcomplemento._2_DetalleAux_DescTipo = "Pago"
         ROWcomplemento._3_DetalleAux_Misc01 = "HD"
-        ROWcomplemento._4_DetalleAux_Misc02 = txbCtaOrdenante.Text.Trim
-        ROWcomplemento._5_DetalleAux_Misc03 = lblRfcCtaBeneficiario.Text.Trim 'txbCtaOrdenante.Text
-        ROWcomplemento._6_DetalleAux_Misc04 = lblCtaBeneficiario.Text.Trim 'lblRfcCtaBeneficiario.Text
+        If cbDatosBancarios.Checked = True Then
+            ROWcomplemento._4_DetalleAux_Misc02 = txbCtaOrdenante.Text.Trim
+            ROWcomplemento._5_DetalleAux_Misc03 = lblRfcCtaBeneficiario.Text.Trim 'txbCtaOrdenante.Text
+            ROWcomplemento._6_DetalleAux_Misc04 = lblCtaBeneficiario.Text.Trim 'lblRfcCtaBeneficiario.Text
+        Else
+            ROWcomplemento._4_DetalleAux_Misc02 = ""
+            ROWcomplemento._5_DetalleAux_Misc03 = ""
+            ROWcomplemento._6_DetalleAux_Misc04 = ""
+        End If
         ROWcomplemento._7_DetalleAux_Misc05 = Spei
         ROWcomplemento._8_DetalleAux_Misc06 = SpeiCert
         ROWcomplemento._9_DetalleAux_Misc07 = SpeiCadOrg
@@ -276,7 +290,16 @@ Public Class Form1
         totalPago = 0
 
         limpiar_1()
+        If rbFinagil.Checked = True Then
+            ToolStripLabel1.Text = "REP - " + CFDI_EncabezadoTableAdapter.SacaFolio.ToString
+            txtMails.Text = "lgarcia@finagil.com.mx;lhernandez@finagil.com.mx"
+        Else
+            ToolStripLabel1.Text = "REPA" + CFDI_EncabezadoTableAdapter.SacaFolioArfin.ToString
+            txtMails.Text = "lgarcia@finagil.com.mx;roberto.zarza@finagil.com.mx"
+        End If
     End Sub
+
+
 
     Private Sub TextBox7_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox7.TextChanged
         If TextBox7.Text = "03" Then
@@ -436,11 +459,13 @@ Public Class Form1
     Private Sub rbFinagil_CheckedChanged(sender As Object, e As EventArgs) Handles rbFinagil.CheckedChanged
         btnLoadXML.Enabled = False
         dgDoctosPagos.Rows.Clear()
+        'ToolStripLabel1.Text = "REP - " + CFDI_EncabezadoTableAdapter.SacaFolio
     End Sub
 
     Private Sub rbArfin_CheckedChanged(sender As Object, e As EventArgs) Handles rbArfin.CheckedChanged
         btnLoadXML.Enabled = True
         dgDoctosPagos.Rows.Clear()
+        'ToolStripLabel1.Text = "REP - " + CFDI_EncabezadoTableAdapter.SacaFolioArfin
     End Sub
 
     Private Sub btnLoadXML_Click(sender As Object, e As EventArgs) Handles btnLoadXML.Click
@@ -573,5 +598,33 @@ Public Class Form1
 
     Private Sub btnOcultarSPEI_Click(sender As Object, e As EventArgs) Handles btnOcultarSPEI.Click
         gbxSPEI.Visible = False
+    End Sub
+
+    Private Sub rbArfin_Click(sender As Object, e As EventArgs) Handles rbArfin.Click
+        ToolStripLabel1.Text = "REPA - " + CFDI_EncabezadoTableAdapter.SacaFolioArfin.ToString
+        txtMails.Text = "lgarcia@finagil.com.mx;roberto.zarza@finagil.com.mx"
+    End Sub
+
+    Private Sub rbFinagil_Click(sender As Object, e As EventArgs) Handles rbFinagil.Click
+        ToolStripLabel1.Text = "REP - " + CFDI_EncabezadoTableAdapter.SacaFolio.ToString
+        txtMails.Text = "lgarcia@finagil.com.mx;lhernandez@finagil.com.mx"
+    End Sub
+
+    Private Sub cbDatosBancarios_CheckedChanged(sender As Object, e As EventArgs) Handles cbDatosBancarios.CheckedChanged
+        If cbDatosBancarios.Checked = False Then
+            ocultarDatosBancarios()
+        Else
+            ComboBox3.Enabled = True
+            ComboBox2.Enabled = True
+        End If
+    End Sub
+
+    Private Sub ocultarDatosBancarios()
+        ComboBox3.Enabled = False
+        txbRfcCtaOrdenante.Text = ""
+        txbCtaOrdenante.Text = ""
+        ComboBox2.Enabled = False
+        lblCtaBeneficiario.Text = ""
+        lblRfcCtaBeneficiario.Text = ""
     End Sub
 End Class

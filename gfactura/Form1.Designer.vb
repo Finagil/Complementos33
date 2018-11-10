@@ -117,6 +117,11 @@ Partial Class Form1
         Me.txtSPEISello = New System.Windows.Forms.TextBox()
         Me.txtSPEICad = New System.Windows.Forms.TextBox()
         Me.txtSPEICert = New System.Windows.Forms.TextBox()
+        Me.tsSerieFolio = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.cbDatosBancarios = New System.Windows.Forms.CheckBox()
+        Me.txtMails = New System.Windows.Forms.TextBox()
+        Me.lbMails = New System.Windows.Forms.Label()
         SaldoFacturaLabel = New System.Windows.Forms.Label()
         _83_Cod_MonedaLabel = New System.Windows.Forms.Label()
         FolioFiscalLabel = New System.Windows.Forms.Label()
@@ -133,6 +138,7 @@ Partial Class Form1
         CType(Me.dgDoctosPagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbEmisor.SuspendLayout()
         Me.gbxSPEI.SuspendLayout()
+        Me.tsSerieFolio.SuspendLayout()
         Me.SuspendLayout()
         '
         'SaldoFacturaLabel
@@ -193,7 +199,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(370, 342)
+        Me.Label1.Location = New System.Drawing.Point(432, 342)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(94, 13)
         Me.Label1.TabIndex = 6
@@ -201,19 +207,19 @@ Partial Class Form1
         '
         'txbCtaOrdenante
         '
-        Me.txbCtaOrdenante.Location = New System.Drawing.Point(373, 358)
+        Me.txbCtaOrdenante.Location = New System.Drawing.Point(435, 358)
         Me.txbCtaOrdenante.Name = "txbCtaOrdenante"
         Me.txbCtaOrdenante.Size = New System.Drawing.Size(116, 20)
-        Me.txbCtaOrdenante.TabIndex = 14
+        Me.txbCtaOrdenante.TabIndex = 15
         '
         'TextBox7
         '
         Me.TextBox7.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.InstrumentoMonetarioBindingSource, "SAT", True))
-        Me.TextBox7.Location = New System.Drawing.Point(347, 316)
+        Me.TextBox7.Location = New System.Drawing.Point(360, 316)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.ReadOnly = True
         Me.TextBox7.Size = New System.Drawing.Size(25, 20)
-        Me.TextBox7.TabIndex = 70
+        Me.TextBox7.TabIndex = 11
         '
         'InstrumentoMonetarioBindingSource
         '
@@ -222,10 +228,10 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(977, 315)
+        Me.Button2.Location = New System.Drawing.Point(1051, 314)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(150, 53)
-        Me.Button2.TabIndex = 16
+        Me.Button2.TabIndex = 31
         Me.Button2.Text = "Guardar Datos y Generar Factura"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -264,11 +270,12 @@ Partial Class Form1
         '
         Me.ComboBox2.DataSource = Me.BancosBindingSource
         Me.ComboBox2.DisplayMember = "DescBanco"
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(378, 315)
+        Me.ComboBox2.Location = New System.Drawing.Point(21, 407)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(135, 21)
-        Me.ComboBox2.TabIndex = 10
+        Me.ComboBox2.Size = New System.Drawing.Size(208, 21)
+        Me.ComboBox2.TabIndex = 17
         Me.ComboBox2.ValueMember = "Banco"
         Me.ComboBox2.Visible = False
         '
@@ -309,7 +316,7 @@ Partial Class Form1
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(375, 299)
+        Me.Label10.Location = New System.Drawing.Point(18, 391)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(82, 13)
         Me.Label10.TabIndex = 27
@@ -319,7 +326,7 @@ Partial Class Form1
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(630, 300)
+        Me.Label11.Location = New System.Drawing.Point(285, 391)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(99, 13)
         Me.Label11.TabIndex = 28
@@ -330,17 +337,17 @@ Partial Class Form1
         '
         Me.lblCtaBeneficiario.AutoSize = True
         Me.lblCtaBeneficiario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BancosBindingSource, "Cuenta", True))
-        Me.lblCtaBeneficiario.Location = New System.Drawing.Point(631, 319)
+        Me.lblCtaBeneficiario.Location = New System.Drawing.Point(285, 410)
         Me.lblCtaBeneficiario.Name = "lblCtaBeneficiario"
         Me.lblCtaBeneficiario.Size = New System.Drawing.Size(41, 13)
-        Me.lblCtaBeneficiario.TabIndex = 29
+        Me.lblCtaBeneficiario.TabIndex = 18
         Me.lblCtaBeneficiario.Text = "Cuenta"
         Me.lblCtaBeneficiario.Visible = False
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(735, 300)
+        Me.Label13.Location = New System.Drawing.Point(432, 391)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(105, 13)
         Me.Label13.TabIndex = 30
@@ -351,17 +358,17 @@ Partial Class Form1
         '
         Me.lblRfcCtaBeneficiario.AutoSize = True
         Me.lblRfcCtaBeneficiario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BancosBindingSource, "RFC", True))
-        Me.lblRfcCtaBeneficiario.Location = New System.Drawing.Point(735, 319)
+        Me.lblRfcCtaBeneficiario.Location = New System.Drawing.Point(432, 410)
         Me.lblRfcCtaBeneficiario.Name = "lblRfcCtaBeneficiario"
         Me.lblRfcCtaBeneficiario.Size = New System.Drawing.Size(31, 13)
-        Me.lblRfcCtaBeneficiario.TabIndex = 31
+        Me.lblRfcCtaBeneficiario.TabIndex = 19
         Me.lblRfcCtaBeneficiario.Text = "RFC "
         Me.lblRfcCtaBeneficiario.Visible = False
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(230, 342)
+        Me.Label15.Location = New System.Drawing.Point(285, 342)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(100, 13)
         Me.Label15.TabIndex = 32
@@ -370,13 +377,15 @@ Partial Class Form1
         '
         'txbRfcCtaOrdenante
         '
+        Me.txbRfcCtaOrdenante.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txbRfcCtaOrdenante.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.CFDI_BancosBindingSource, "RFC", True))
         Me.txbRfcCtaOrdenante.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CFDI_BancosBindingSource, "RFC", True))
-        Me.txbRfcCtaOrdenante.Location = New System.Drawing.Point(235, 358)
+        Me.txbRfcCtaOrdenante.Location = New System.Drawing.Point(288, 361)
         Me.txbRfcCtaOrdenante.Name = "txbRfcCtaOrdenante"
         Me.txbRfcCtaOrdenante.ReadOnly = True
-        Me.txbRfcCtaOrdenante.Size = New System.Drawing.Size(132, 20)
-        Me.txbRfcCtaOrdenante.TabIndex = 13
+        Me.txbRfcCtaOrdenante.Size = New System.Drawing.Size(132, 13)
+        Me.txbRfcCtaOrdenante.TabIndex = 14
+        Me.txbRfcCtaOrdenante.Text = "RFC"
         '
         'CFDI_BancosBindingSource
         '
@@ -392,7 +401,7 @@ Partial Class Form1
         Me.ComboBox3.Location = New System.Drawing.Point(21, 358)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(208, 21)
-        Me.ComboBox3.TabIndex = 12
+        Me.ComboBox3.TabIndex = 13
         Me.ComboBox3.ValueMember = "SAT"
         '
         'DataGridViewTextBoxColumn16
@@ -457,15 +466,15 @@ Partial Class Form1
         '
         'txbrpago
         '
-        Me.txbrpago.Location = New System.Drawing.Point(495, 358)
+        Me.txbrpago.Location = New System.Drawing.Point(580, 358)
         Me.txbrpago.Name = "txbrpago"
-        Me.txbrpago.Size = New System.Drawing.Size(100, 20)
-        Me.txbrpago.TabIndex = 15
+        Me.txbrpago.Size = New System.Drawing.Size(116, 20)
+        Me.txbrpago.TabIndex = 16
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(492, 341)
+        Me.Label19.Location = New System.Drawing.Point(577, 342)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(87, 13)
         Me.Label19.TabIndex = 41
@@ -751,16 +760,16 @@ Partial Class Form1
         Me.cbMoneda.Enabled = False
         Me.cbMoneda.FormattingEnabled = True
         Me.cbMoneda.Items.AddRange(New Object() {"MXN", "USD"})
-        Me.cbMoneda.Location = New System.Drawing.Point(519, 315)
+        Me.cbMoneda.Location = New System.Drawing.Point(435, 314)
         Me.cbMoneda.Name = "cbMoneda"
         Me.cbMoneda.Size = New System.Drawing.Size(73, 21)
-        Me.cbMoneda.TabIndex = 11
+        Me.cbMoneda.TabIndex = 12
         Me.cbMoneda.Text = "MXN"
         '
         'lbMoneda
         '
         Me.lbMoneda.AutoSize = True
-        Me.lbMoneda.Location = New System.Drawing.Point(520, 299)
+        Me.lbMoneda.Location = New System.Drawing.Point(436, 298)
         Me.lbMoneda.Name = "lbMoneda"
         Me.lbMoneda.Size = New System.Drawing.Size(49, 13)
         Me.lbMoneda.TabIndex = 63
@@ -769,7 +778,7 @@ Partial Class Form1
         'lbTotalP
         '
         Me.lbTotalP.AutoSize = True
-        Me.lbTotalP.Location = New System.Drawing.Point(633, 358)
+        Me.lbTotalP.Location = New System.Drawing.Point(577, 319)
         Me.lbTotalP.Name = "lbTotalP"
         Me.lbTotalP.Size = New System.Drawing.Size(74, 13)
         Me.lbTotalP.TabIndex = 64
@@ -778,7 +787,7 @@ Partial Class Form1
         'lbTotal
         '
         Me.lbTotal.AutoSize = True
-        Me.lbTotal.Location = New System.Drawing.Point(710, 358)
+        Me.lbTotal.Location = New System.Drawing.Point(654, 319)
         Me.lbTotal.Name = "lbTotal"
         Me.lbTotal.Size = New System.Drawing.Size(13, 13)
         Me.lbTotal.TabIndex = 65
@@ -813,10 +822,10 @@ Partial Class Form1
         'chkSPEI
         '
         Me.chkSPEI.AutoSize = True
-        Me.chkSPEI.Location = New System.Drawing.Point(281, 318)
+        Me.chkSPEI.Location = New System.Drawing.Point(288, 318)
         Me.chkSPEI.Name = "chkSPEI"
         Me.chkSPEI.Size = New System.Drawing.Size(56, 17)
-        Me.chkSPEI.TabIndex = 71
+        Me.chkSPEI.TabIndex = 10
         Me.chkSPEI.Text = "SPEI?"
         Me.chkSPEI.UseVisualStyleBackColor = True
         '
@@ -900,12 +909,63 @@ Partial Class Form1
         Me.txtSPEICert.Size = New System.Drawing.Size(368, 20)
         Me.txtSPEICert.TabIndex = 0
         '
+        'tsSerieFolio
+        '
+        Me.tsSerieFolio.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.tsSerieFolio.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1})
+        Me.tsSerieFolio.Location = New System.Drawing.Point(0, 474)
+        Me.tsSerieFolio.Name = "tsSerieFolio"
+        Me.tsSerieFolio.Size = New System.Drawing.Size(1236, 25)
+        Me.tsSerieFolio.TabIndex = 73
+        Me.tsSerieFolio.Text = "ToolStrip1"
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(93, 22)
+        Me.ToolStripLabel1.Text = "ToolStripLabel1"
+        '
+        'cbDatosBancarios
+        '
+        Me.cbDatosBancarios.AutoSize = True
+        Me.cbDatosBancarios.Checked = True
+        Me.cbDatosBancarios.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbDatosBancarios.Location = New System.Drawing.Point(580, 406)
+        Me.cbDatosBancarios.Name = "cbDatosBancarios"
+        Me.cbDatosBancarios.Size = New System.Drawing.Size(150, 17)
+        Me.cbDatosBancarios.TabIndex = 30
+        Me.cbDatosBancarios.Text = "Agregar Datos Bancarios?"
+        Me.cbDatosBancarios.UseVisualStyleBackColor = True
+        '
+        'txtMails
+        '
+        Me.txtMails.Location = New System.Drawing.Point(765, 434)
+        Me.txtMails.Multiline = True
+        Me.txtMails.Name = "txtMails"
+        Me.txtMails.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.txtMails.Size = New System.Drawing.Size(436, 28)
+        Me.txtMails.TabIndex = 74
+        '
+        'lbMails
+        '
+        Me.lbMails.AutoSize = True
+        Me.lbMails.Location = New System.Drawing.Point(722, 437)
+        Me.lbMails.Name = "lbMails"
+        Me.lbMails.Size = New System.Drawing.Size(34, 13)
+        Me.lbMails.TabIndex = 75
+        Me.lbMails.Text = "Mails:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1236, 393)
+        Me.ClientSize = New System.Drawing.Size(1236, 499)
+        Me.Controls.Add(Me.lbMails)
+        Me.Controls.Add(Me.txtMails)
+        Me.Controls.Add(Me.cbDatosBancarios)
+        Me.Controls.Add(Me.tsSerieFolio)
         Me.Controls.Add(Me.gbxSPEI)
         Me.Controls.Add(Me.chkSPEI)
         Me.Controls.Add(Me.lblFechaEmision)
@@ -972,6 +1032,8 @@ Partial Class Form1
         Me.gbEmisor.PerformLayout()
         Me.gbxSPEI.ResumeLayout(False)
         Me.gbxSPEI.PerformLayout()
+        Me.tsSerieFolio.ResumeLayout(False)
+        Me.tsSerieFolio.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1090,4 +1152,9 @@ Partial Class Form1
     Friend WithEvents txtSPEISello As TextBox
     Friend WithEvents txtSPEICad As TextBox
     Friend WithEvents txtSPEICert As TextBox
+    Friend WithEvents tsSerieFolio As ToolStrip
+    Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Friend WithEvents cbDatosBancarios As CheckBox
+    Friend WithEvents txtMails As TextBox
+    Friend WithEvents lbMails As Label
 End Class

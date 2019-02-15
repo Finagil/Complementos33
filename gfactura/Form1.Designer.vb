@@ -396,7 +396,6 @@ Partial Class Form1
         '
         Me.ComboBox3.DataSource = Me.CFDI_BancosBindingSource
         Me.ComboBox3.DisplayMember = "Nombre"
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Location = New System.Drawing.Point(21, 358)
         Me.ComboBox3.Name = "ComboBox3"

@@ -493,7 +493,11 @@ Public Class Form1
                 Select Case node2.Name
                     Case "Serie"
                         ROWheader_XML._27_Serie_Comprobante = node2.Value.ToString
+                    Case "serie"
+                        ROWheader_XML._27_Serie_Comprobante = node2.Value.ToString
                     Case "Folio"
+                        ROWheader_XML._1_Folio = node2.Value.ToString
+                    Case "folio"
                         ROWheader_XML._1_Folio = node2.Value.ToString
                     Case "Moneda"
                         ROWheader_XML._83_Cod_Moneda = node2.Value.ToString
@@ -501,10 +505,17 @@ Public Class Form1
                         ROWheader_XML._177_Tasa_Divisa = node2.Value.ToString
                     Case "MetodoPago"
                         ROWheader_XML._190_Metodo_Pago = node2.Value.ToString
+                    Case "metodoDePago"
+                        ROWheader_XML._190_Metodo_Pago = node2.Value.ToString
                     Case "Fecha"
                         ROWheader_XML._30_Fecha = Convert.ToDateTime(node2.Value).ToString("dd/MM/yyyy")
                         ROWheader_XML._31_Hora = Convert.ToDateTime(node2.Value).ToString("hh:mm:ss")
+                    Case "fecha"
+                        ROWheader_XML._30_Fecha = Convert.ToDateTime(node2.Value).ToString("dd/MM/yyyy")
+                        ROWheader_XML._31_Hora = Convert.ToDateTime(node2.Value).ToString("hh:mm:ss")
                     Case "Total"
+                        ROWheader_XML._56_Monto_Total = CDbl(node2.Value)
+                    Case "total"
                         ROWheader_XML._56_Monto_Total = CDbl(node2.Value)
                 End Select
             Next
@@ -516,6 +527,10 @@ Public Class Form1
                             Case "Rfc"
                                 ROWheader_XML._3_RFC_Emisor = emisor_a.Value.ToString
                             Case "Nombre"
+                                ROWheader_XML._2_Nombre_Emisor = emisor_a.Value.ToString
+                            Case "rfc"
+                                ROWheader_XML._3_RFC_Emisor = emisor_a.Value.ToString
+                            Case "nombre"
                                 ROWheader_XML._2_Nombre_Emisor = emisor_a.Value.ToString
                             Case "RegimenFiscal"
                                 ROWheader_XML._167_RegimentFiscal = emisor_a.Value.ToString
@@ -531,6 +546,10 @@ Public Class Form1
                             Case "Rfc"
                                 ROWheader_XML._43_RFC_Receptor = receptor_a.Value.ToString
                             Case "Nombre"
+                                ROWheader_XML._42_Nombre_Receptor = receptor_a.Value.ToString
+                            Case "rfc"
+                                ROWheader_XML._43_RFC_Receptor = receptor_a.Value.ToString
+                            Case "nombre"
                                 ROWheader_XML._42_Nombre_Receptor = receptor_a.Value.ToString
                             Case "UsoCFDI"
                                 ROWheader_XML._144_Misc32 = receptor_a.Value.ToString
@@ -556,7 +575,8 @@ Public Class Form1
             ROWheader_XML._58_TipoCFD = "FA"
             ROWheader_XML._191_Efecto_Comprobante = "I"
             ROWheader_XML.Encabezado_Procesado = True
-
+            ROWheader_XML._29_FormaPago = "03"
+            ROWheader_XML._190_Metodo_Pago = "PUE"
 
             'Agrega detalle de factura externa
             Dim ROWdetail_XML As Production_AUXDataSet.CFDI_DetalleRow
@@ -571,7 +591,7 @@ Public Class Form1
             ROWdetail_XML.Detalle_Folio = ROWheader_XML._1_Folio
             ROWdetail_XML.Detalle_Serie = ROWheader_XML._27_Serie_Comprobante
             Try
-                If ROWheader_XML._27_Serie_Comprobante = "S" And ROWheader_XML._3_RFC_Emisor = "SAR951230N5A" Then
+                If ROWheader_XML._27_Serie_Comprobante <> "S" And ROWheader_XML._3_RFC_Emisor <> "SAR951230N5A" Then
                     Me.Production_AUXDataSet.CFDI_Encabezado.Rows.Add(ROWheader_XML)
                     Me.CFDI_EncabezadoTableAdapter.Update(Me.Production_AUXDataSet.CFDI_Encabezado)
 
@@ -613,7 +633,10 @@ Public Class Form1
     Private Sub cbDatosBancarios_CheckedChanged(sender As Object, e As EventArgs) Handles cbDatosBancarios.CheckedChanged
         If cbDatosBancarios.Checked = False Then
             ocultarDatosBancarios()
+            ComboBox3.SelectedIndex = -1
         Else
+            ComboBox3.DataSource = Production_AUXDataSet.Tables("CFDI_Bancos")
+            ComboBox3.DisplayMember = "Nombre"
             ComboBox3.Enabled = True
             ComboBox2.Enabled = True
         End If
@@ -626,5 +649,11 @@ Public Class Form1
         ComboBox2.Enabled = False
         lblCtaBeneficiario.Text = ""
         lblRfcCtaBeneficiario.Text = ""
+    End Sub
+
+    Private Sub ComboBox3_TextChanged(sender As Object, e As EventArgs) Handles ComboBox3.TextChanged
+        If ComboBox3.Text.Length > 5 Then
+            CFDI_BancosBindingSource.Filter = "Nombre like '" & ComboBox3.Text & "%'"
+        End If
     End Sub
 End Class

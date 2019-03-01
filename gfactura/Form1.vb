@@ -600,6 +600,7 @@ Public Class Form1
                 Else
                     MsgBox("RFC y Serie no permitidas", MsgBoxStyle.Exclamation)
                 End If
+                MsgBox("Proceso terminado", MsgBoxStyle.Information)
             Catch ex As Exception
                 MsgBox(ex.ToString, MsgBoxStyle.Exclamation)
             End Try

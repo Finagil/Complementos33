@@ -122,6 +122,15 @@ Partial Class Form1
         Me.cbDatosBancarios = New System.Windows.Forms.CheckBox()
         Me.txtMails = New System.Windows.Forms.TextBox()
         Me.lbMails = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblUUIDSust = New System.Windows.Forms.Label()
+        Me.CFDIControlTimbresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.txtSerieSust = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.txtFolioSust = New System.Windows.Forms.TextBox()
+        Me.CFDIEncabezadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CFDI_ControlTimbresTableAdapter = New Complemento33.Production_AUXDataSetTableAdapters.CFDI_ControlTimbresTableAdapter()
         SaldoFacturaLabel = New System.Windows.Forms.Label()
         _83_Cod_MonedaLabel = New System.Windows.Forms.Label()
         FolioFiscalLabel = New System.Windows.Forms.Label()
@@ -139,6 +148,9 @@ Partial Class Form1
         Me.gbEmisor.SuspendLayout()
         Me.gbxSPEI.SuspendLayout()
         Me.tsSerieFolio.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.CFDIControlTimbresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CFDIEncabezadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SaldoFacturaLabel
@@ -955,12 +967,83 @@ Partial Class Form1
         Me.lbMails.TabIndex = 75
         Me.lbMails.Text = "Mails:"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.lblUUIDSust)
+        Me.GroupBox1.Controls.Add(Me.txtSerieSust)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label16)
+        Me.GroupBox1.Controls.Add(Me.txtFolioSust)
+        Me.GroupBox1.Location = New System.Drawing.Point(763, 298)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(257, 96)
+        Me.GroupBox1.TabIndex = 76
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Sustitución:"
+        '
+        'lblUUIDSust
+        '
+        Me.lblUUIDSust.AutoSize = True
+        Me.lblUUIDSust.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CFDIControlTimbresBindingSource, "uuid", True))
+        Me.lblUUIDSust.Location = New System.Drawing.Point(13, 74)
+        Me.lblUUIDSust.Name = "lblUUIDSust"
+        Me.lblUUIDSust.Size = New System.Drawing.Size(45, 13)
+        Me.lblUUIDSust.TabIndex = 49
+        Me.lblUUIDSust.Text = "Label17"
+        '
+        'CFDIControlTimbresBindingSource
+        '
+        Me.CFDIControlTimbresBindingSource.DataMember = "CFDI_ControlTimbres"
+        Me.CFDIControlTimbresBindingSource.DataSource = Me.Production_AUXDataSet
+        '
+        'txtSerieSust
+        '
+        Me.txtSerieSust.Location = New System.Drawing.Point(13, 36)
+        Me.txtSerieSust.Name = "txtSerieSust"
+        Me.txtSerieSust.Size = New System.Drawing.Size(51, 20)
+        Me.txtSerieSust.TabIndex = 45
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(10, 20)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(31, 13)
+        Me.Label7.TabIndex = 48
+        Me.Label7.Text = "Serie"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(74, 20)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(29, 13)
+        Me.Label16.TabIndex = 47
+        Me.Label16.Text = "Folio"
+        '
+        'txtFolioSust
+        '
+        Me.txtFolioSust.Location = New System.Drawing.Point(70, 36)
+        Me.txtFolioSust.Name = "txtFolioSust"
+        Me.txtFolioSust.Size = New System.Drawing.Size(77, 20)
+        Me.txtFolioSust.TabIndex = 46
+        '
+        'CFDIEncabezadoBindingSource
+        '
+        Me.CFDIEncabezadoBindingSource.DataMember = "CFDI_Encabezado"
+        Me.CFDIEncabezadoBindingSource.DataSource = Me.Production_AUXDataSet
+        '
+        'CFDI_ControlTimbresTableAdapter
+        '
+        Me.CFDI_ControlTimbresTableAdapter.ClearBeforeFill = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1236, 499)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lbMails)
         Me.Controls.Add(Me.txtMails)
         Me.Controls.Add(Me.cbDatosBancarios)
@@ -1033,6 +1116,10 @@ Partial Class Form1
         Me.gbxSPEI.PerformLayout()
         Me.tsSerieFolio.ResumeLayout(False)
         Me.tsSerieFolio.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.CFDIControlTimbresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CFDIEncabezadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1156,4 +1243,13 @@ Partial Class Form1
     Friend WithEvents cbDatosBancarios As CheckBox
     Friend WithEvents txtMails As TextBox
     Friend WithEvents lbMails As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents txtSerieSust As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txtFolioSust As TextBox
+    Friend WithEvents lblUUIDSust As Label
+    Friend WithEvents CFDIEncabezadoBindingSource As BindingSource
+    Friend WithEvents CFDIControlTimbresBindingSource As BindingSource
+    Friend WithEvents CFDI_ControlTimbresTableAdapter As Production_AUXDataSetTableAdapters.CFDI_ControlTimbresTableAdapter
 End Class

@@ -13,16 +13,17 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.CFDI_DetalleTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Detalle)
+        'Me.CFDI_DetalleTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Detalle)
         Me.InstrumentoMonetarioTableAdapter.Fill(Me.Production_AUXDataSet.InstrumentoMonetario)
         Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
         Me.Vw_CFDI_FacturasConSaldoTableAdapter.Fill(Me.Production_AUXDataSet.Vw_CFDI_FacturasConSaldo)
         Me.CFDI_BancosTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Bancos)
         Me.BancosTableAdapter.Fill(Me.Production_AUXDataSet.Bancos)
         Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
-        Me.CFDI_EncabezadoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Encabezado)
+        'Me.CFDI_EncabezadoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Encabezado)
         Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
         Me.CFDI_BancosTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Bancos)
+        'Me.CFDI_ControlTimbresTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ControlTimbres)
         DateTimePicker1.MaxDate = Date.Now
         DateTimePicker1.MinDate = Date.Now.AddDays((Date.Now.Day - 1) * -1).AddMonths(-1)
 
@@ -283,6 +284,37 @@ Public Class Form1
             Me.CFDI_ComplementoPagoTableAdapter.Update(Me.Production_AUXDataSet.CFDI_ComplementoPago)
             Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
         Next
+
+        ' COMPLEMENTO DE PAGO Registro de sustitución
+        If lblUUIDSust.Text.Trim.Length > 0 And lblUUIDSust.Text.Trim <> "NE" Then
+            ROWcomplemento = Production_AUXDataSet.CFDI_ComplementoPago.NewCFDI_ComplementoPagoRow()
+            ROWcomplemento._1_DetalleAux_Tipo = "DR"
+            ROWcomplemento._2_DetalleAux_DescTipo = "TipoRelacion"
+            ROWcomplemento._3_DetalleAux_Misc01 = "04"
+            ROWcomplemento._4_DetalleAux_Misc02 = lblUUIDSust.Text.Trim
+            ROWcomplemento._5_DetalleAux_Misc03 = "" 'DateTimePicker1.Value.Date.ToString("yyyy/MM/dd") + "T12:00:00" 'vfecha  ' DateTimePicker1.MinDate  '  Fecha en Formato  AAMMDD
+            ROWcomplemento._6_DetalleAux_Misc04 = "" 'CmbFormaPago.SelectedValue
+            ROWcomplemento._7_DetalleAux_Misc05 = "" 'cbMoneda.Text
+            ROWcomplemento._8_DetalleAux_Misc06 = ""
+            ROWcomplemento._9_DetalleAux_Misc07 = "" 'totalPago
+            ROWcomplemento._10_DetalleAux_Misc08 = "" 'txbrpago.Text ' Referencia de Pago
+            ROWcomplemento._11_DetalleAux_Misc09 = "" 'txbRfcCtaOrdenante.Text '  RFC Cta Ordenante
+            ROWcomplemento._12_DetalleAux_Misc10 = "" 'ComboBox3.Text  ' Nombre Banco Ordenante
+
+            ROWcomplemento._13_DetalleAux_Misc11 = " "      '  Este campo NO debe ir Vacio
+            ROWcomplemento._18_DetalleAux_Misc16 = ""
+            ROWcomplemento._19_DetalleAux_Folio = ROWheader._1_Folio
+            ROWcomplemento._20_DetalleAux_Serie = ROWheader._27_Serie_Comprobante
+
+            Me.Production_AUXDataSet.CFDI_ComplementoPago.Rows.Add(ROWcomplemento)
+            Me.CFDI_ComplementoPagoTableAdapter.Update(Me.Production_AUXDataSet.CFDI_ComplementoPago)
+        ElseIf txtFolioSust.Text <> "" And lblUUIDSust.Text.Trim = "NE" Then
+            MsgBox("Está intenatdo generar un CFDI con complemento de pago sustituyendo un comprobante previo sin folio fiscal, favor de verificar que la información sea correcta")
+            limpiar_1()
+            Exit Sub
+        End If
+
+        '*****************
 
         MsgBox("Se guardaron Datos de Factura en BD")
         dgDoctosPagos.Rows.Clear()
@@ -657,4 +689,63 @@ Public Class Form1
             CFDI_BancosBindingSource.Filter = "Nombre like '" & ComboBox3.Text & "%'"
         End If
     End Sub
+
+    Private Sub txtFolioSust_KeyDown(sender As Object, e As KeyEventArgs) Handles txtFolioSust.KeyDown
+        Dim taCFDTimbress As New Production_AUXDataSetTableAdapters.CFDI_ControlTimbresTableAdapter
+        If e.KeyCode = Keys.Enter Then
+            If rbArfin.Checked = True Then
+                If txtSerieSust.Text.ToUpper = "REPA" Then
+                    If txtFolioSust.Text.Length > 0 Then
+                        lblUUIDSust.Text = taCFDTimbress.ObtieneUUID(txtFolioSust.Text.Trim, txtSerieSust.Text.Trim)
+                        If lblUUIDSust.Text = "NE" Then
+                            MsgBox("No existe folio fiscal")
+                            Me.txtSerieSust.Focus()
+                        End If
+                    End If
+                Else
+                    MsgBox("La serie " + txtSerieSust.Text.ToUpper + " no corresponde a la razón social de Servicios Arfin", MsgBoxStyle.Information)
+                    limpiar_1()
+                    Me.txtSerieSust.Focus()
+                End If
+            End If
+
+            If rbFinagil.Checked = True Then
+                If txtSerieSust.Text.ToUpper = "REP" Then
+                    If txtFolioSust.Text.Length > 0 Then
+                        lblUUIDSust.Text = taCFDTimbress.ObtieneUUID(txtFolioSust.Text.Trim, txtSerieSust.Text.Trim)
+                        If lblUUIDSust.Text = "NE" Then
+                            MsgBox("No existe folio fiscal")
+                            Me.txtSerieSust.Focus()
+                        End If
+                    End If
+                Else
+                    MsgBox("La serie " + txtSerieSust.Text.ToUpper + " no corresponde a la razón social de Finagil", MsgBoxStyle.Information)
+                    limpiar_1()
+                    Me.txtSerieSust.Focus()
+                End If
+            End If
+        End If
+    End Sub
+
+    'Sub Filtros2()
+    '    If txtSerieSust.Text.Length > 0 Then
+    '        If txtFolioSust.Text.Length > 0 Then
+    '            CFDIControlTimbresBindingSource.Filter = "serie like '" & txtSerieSust.Text & "%' and folio = " & txtFolioSust.Text
+    '        Else
+    '            CFDIControlTimbresBindingSource.Filter = "serie like '" & txtSerieSust.Text & "%'"
+    '        End If
+    '    Else
+    '        If txtFolioSust.Text.Length > 0 Then
+    '            CFDIControlTimbresBindingSource.Filter = "serie = '" & txtSerieSust.Text & "'"
+    '        Else
+    '            CFDIControlTimbresBindingSource.Filter = ""
+    '        End If
+    '    End If
+    '    If CFDIControlTimbresBindingSource.Count = 0 Then
+    '        MsgBox("La factura no existe...", MsgBoxStyle.Exclamation)
+    '        'limpiar_1()
+    '        Me.txtSerieSust.Focus()
+    '    End If
+
+    'End Sub
 End Class

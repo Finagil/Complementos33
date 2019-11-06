@@ -1447,7 +1447,7 @@ SET                CFDI_Pago = CFDI_Pago + 1</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ConsumeFolioAr" Modifier="Public" Name="ConsumeFolioAr" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="ConsumeFolioAr">
+              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ConsumeFolioAr" Modifier="Public" Name="ConsumeFolioAr" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ConsumeFolioAr">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Llaves
@@ -1470,7 +1470,7 @@ GROUP BY [1_Folio], [27_Serie_Comprobante], Guid</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="InsertaEncabezado" Modifier="Public" Name="InsertaEncabezado" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertaEncabezado">
+              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="InsertaEncabezado" Modifier="Public" Name="InsertaEncabezado" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertaEncabezado">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO CFDI_Encabezado
@@ -1523,7 +1523,7 @@ VALUES        (@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8,@p9,@p10,@p11,@p12,@p13,@p14,@p15
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[CFDI_Encabezado] ([1_Folio], [2_Nombre_Emisor], [3_RFC_Emisor], [4_Dom_Emisor_calle], [5_Dom_Emisor_noExterior], [6_Dom_Emisor_noInterior], [7_Dom_Emisor_colonia], [8_Dom_Emisor_localidad], [9_Dom_Emisor_referencia], [10_Dom_Emisor_municipio], [11_Dom_Emisor_estado], [12_Dom_Emisor_pais], [13_Dom_Emisor_codigoPostal], [14_Tel_Emisor], [15_Dom_Sucursal_calle], [16_Dom_Sucursal_noExterior], [17_Dom_Sucursal_noInterior], [18_Dom_Sucursal_colonia], [19_Dom_Sucursal_localidad], [20_Dom_Sucursal_referencia], [21_Dom_Sucursal_municipio], [22_Dom_Sucursal_estado], [23_Dom_Sucursal_pais], [24_Dom_Sucursal_codigoPostal], [25_Tel_sucursal], [26_Version], [27_Serie_Comprobante], [28_Numero_Aprobacion], [29_FormaPago], [30_Fecha], [31_Hora], [32_Dom_LugarExpide_calle], [33_Dom_LugarExpide_noExterior], [34_Dom_LugarExpide_noInterior], [35_Dom_LugarExpide_colonia], [36_Dom_LugarExpide_localidad], [37_Dom_LugarExpide_referencia], [38_Dom_LugarExpide_municipio], [39_Dom_LugarExpide_estado], [40_Dom_LugarExpide_pais], [41_Dom_LugarExpide_codigoPostal], [42_Nombre_Receptor], [43_RFC_Receptor], [44_Dom_Receptor_calle], [45_Dom_Receptor_noExterior], [46_Dom_Receptor_noInterior], [47_Dom_Receptor_colonia], [48_Dom_Receptor_localidad], [49_Dom_Receptor_referencia], [50_Dom_Receptor_municipio], [51_Dom_Receptor_estado], [52_Dom_Receptor_pais], [53_Dom_Receptor_codigoPostal], [54_Monto_SubTotal], [55_Monto_IVA], [56_Monto_Total], [57_Estado], [58_TipoCFD], [59_Notas], [60_Notas02], [61_Notas03], [62_TradingPartner_Prov], [63_Calif_TradingPartner_Prov], [64_EAN_Proveedor], [65_Numero_Factura], [66_Numero_OrdenCompra], [67_Fecha_OrdenCompra], [68_Numero_Proveedor], [69_EAN_Tienda], [70_Numero_Tienda], [71_Nombre_Tienda], [72_Dom_Tienda_calle], [73_Dom_Tienda_noExterior], [74_Dom_Tienda_noInterior], [75_Dom_Tienda_colonia], [76_Dom_Tienda_localidad], [77_Dom_Tienda_referencia], [78_Dom_Tienda_municipio], [79_Dom_Tienda_estado], [80_Dom_Tienda_pais], [81_Dom_Tienda_codigoPostal], [82_RFC_Tienda], [83_Cod_Moneda], [84_Dias_Pago], [85_Porc_Desc_ProntoPago], [86_Monto_Desc_ProntoPago], [87_Cod_Descuento], [88_Porc_Descuento], [89_Monto_Descuento], [90_Cantidad_LineasFactura], [91_Fecha_Vencimiento], [92_Cod_Zona], [93_Numero_Receptor], [94_Cod_Vendedor], [95_Nombre_Vendedor], [96_Via_Embarque], [97_Condiciones_Pago], [98_Numero_Pedido], [99_Fecha_Pedido], [100_Letras_Monto_Total], [101_Cantidad_Unidades], [102_Cantidad_empaques], [103_EAN_Receptor], [104_EAN_LugarExpide], [105_IEPS_Id], [106_Estatus], [107_Numero_Emisor], [108_Monto_Merma], [109_Monto_SubTotal_ApIVA], [110_Transportista], [111_Numero_Solicitud], [112_Desc_Moneda], [113_Misc01], [114_Misc02], [115_Misc03], [116_Misc04], [117_Misc05], [118_Misc06], [119_Misc07], [120_Misc08], [121_Misc09], [122_Misc10], [123_Misc11], [124_Misc12], [125_Misc13], [126_Misc14], [127_Misc15], [128_Misc16], [129_Misc17], [130_Misc18], [131_Misc19], [132_Misc20], [133_Misc21], [134_Misc22], [135_Misc23], [136_Misc24], [137_Misc25], [138_Misc26], [139_Misc27], [140_Misc28], [141_Misc29], [142_Misc30], [143_Misc31], [144_Misc32], [145_Misc33], [146_Misc34], [147_Misc35], [148_Misc36], [149_Misc37], [150_Misc38], [151_Misc39], [152_Misc40], [153_Misc41], [154_Misc42], [155_Misc43], [156_Misc44], [157_Misc45], [158_Misc46], [159_Misc47], [160_Misc48], [161_Misc49], [162_Misc50], [163_Porc_IVA], [164_Monto_IEPS], [165_Document_Status], [166_Delivery_Date], [167_RegimentFiscal], [168_Num_CtaPago], [169_Num_contrarecibo], [170_Fecha_Num_contrarecibo], [171_Contacto_Comprar], [172_Customs_gln], [173_Alternante_identificacion_gln], [174_Nombre_Aduana], [175_Nombre_Aduana_Ciudad], [176_Func_Divisa], [177_Tasa_Divisa], [178_Ref_Tiempo_Pago], [179_Ref_Termino_Tiempo_Pago], [180_LugarExpedicion], [181_SerieFolioFiscalOrig], [182_Tipo_Especial_de_Servicio], [183_FechaFolioFiscalOrig], [184_Porcentaje_no_aplicado], [185_MontoFolioFiscalOrig], [186_Monto_Total_Descuentos], [187_Monto_Total_Pagar], [188_Ano_Aprobacion], [189_Motivo_Descuento], [190_Metodo_Pago], [191_Efecto_Comprobante], [192_Monto_TotalImp_Retenidos], [193_Monto_TotalImp_Trasladados], [Encabezado_Procesado], [Guid]) VALUES (@p1, @p3, @p6, @p9, @p12, @p15, @p18, @p21, @p24, @p27, @p30, @p33, @p36, @p39, @p42, @p45, @p48, @p51, @p54, @p57, @p60, @p63, @p66, @p69, @p72, @p75, @p78, @p80, @p83, @p86, @p89, @p92, @p95, @p98, @p101, @p104, @p107, @p110, @p113, @p116, @p119, @p122, @p125, @p128, @p131, @p134, @p137, @p140, @p143, @p146, @p149, @p152, @p155, @p158, @p161, @p164, @p167, @p170, @p173, @p176, @p179, @p182, @p185, @p188, @p191, @p194, @p197, @p200, @p203, @p206, @p209, @p212, @p215, @p218, @p221, @p224, @p227, @p230, @p233, @p236, @p239, @p242, @p245, @p248, @p251, @p254, @p257, @p260, @p263, @p266, @p269, @p272, @p275, @p278, @p281, @p284, @p287, @p290, @p293, @p296, @p299, @p302, @p305, @p308, @p311, @p314, @p317, @p320, @p323, @p326, @p329, @p332, @p335, @p338, @p341, @p344, @p347, @p350, @p353, @p356, @p359, @p362, @p365, @p368, @p371, @p374, @p377, @p380, @p383, @p386, @p389, @p392, @p395, @p398, @p401, @p404, @p407, @p410, @p413, @p416, @p419, @p422, @p425, @p428, @p431, @p434, @p437, @p440, @p443, @p446, @p449, @p452, @p455, @p458, @p461, @p464, @p467, @p470, @p473, @p476, @p479, @p482, @p485, @p488, @p491, @p494, @p497, @p500, @p503, @p506, @p509, @p512, @p515, @p518, @p521, @p524, @p527, @p530, @p533, @p536, @p539, @p542, @p545, @p548, @p551, @p554, @p557, @p560, @p563, @p566, @p569, @p572, @p575, @Encabezado_Procesado, @Guid);
@@ -1730,7 +1730,7 @@ SELECT [1_Folio], [2_Nombre_Emisor], [3_RFC_Emisor], [4_Dom_Emisor_calle], [5_Do
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy6" GeneratorSourceName="ProcesarFactura" Modifier="Public" Name="ProcesarFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="ProcesarFactura">
+              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy6" GeneratorSourceName="ProcesarFactura" Modifier="Public" Name="ProcesarFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ProcesarFactura">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       CFDI_Encabezado
@@ -1746,7 +1746,7 @@ WHERE        ([1_Folio] = @Folio) AND ([27_Serie_Comprobante] = @Serie)
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectName="Production_AUX.dbo.CFDI_Encabezado" DbObjectType="Table" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy5" GeneratorSourceName="SacaDocumento" Modifier="Public" Name="SacaDocumento" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="SacaDocumento">
+              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectName="Production_AUX.dbo.CFDI_Encabezado" DbObjectType="Table" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy5" GeneratorSourceName="SacaDocumento" Modifier="Public" Name="SacaDocumento" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="SacaDocumento">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(Guid), 'SIN FOLIO FISCAL') AS Guid, [1_Folio], [27_Serie_Comprobante], Guid AS Expr1
@@ -1760,7 +1760,7 @@ GROUP BY [1_Folio], [27_Serie_Comprobante], Guid</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SacaFolio" Modifier="Public" Name="SacaFolio" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="SacaFolio">
+              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SacaFolio" Modifier="Public" Name="SacaFolio" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="SacaFolio">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        MAX(CFDI_Pago) + 1 AS CFD_Pago
@@ -1769,7 +1769,7 @@ FROM            Llaves</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="SacaFolioArf" GeneratorSourceName="SacaFolioArfin" Modifier="Public" Name="SacaFolioArfin" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="SacaFolioArfin">
+              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="SacaFolioArf" GeneratorSourceName="SacaFolioArfin" Modifier="Public" Name="SacaFolioArfin" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="SacaFolioArfin">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        MAX(CFDI_PagoAr) + 1 AS CFD_PagoAr
@@ -1778,7 +1778,7 @@ FROM            Llaves</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SacaTipoCamnbio" Modifier="Public" Name="SacaTipoCamnbio" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="SacaTipoCamnbio">
+              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SacaTipoCamnbio" Modifier="Public" Name="SacaTipoCamnbio" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="SacaTipoCamnbio">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ISNULL(MAX(TipoCambio), 1) AS TipoCambio
@@ -2380,6 +2380,122 @@ SELECT RFC, Nombre FROM CFDI_Bancos WHERE (RFC = @RFC)</CommandText>
               <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
             </Mappings>
             <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CFDI_ControlTimbresTableAdapter" GeneratorDataComponentClassName="CFDI_ControlTimbresTableAdapter" Name="CFDI_ControlTimbres" UserDataComponentName="CFDI_ControlTimbresTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectName="Production.dbo.CFDI_ControlTimbres" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [CFDI_ControlTimbres] WHERE (([id_timbre] = @Original_id_timbre) AND ((@IsNull_serie = 1 AND [serie] IS NULL) OR ([serie] = @Original_serie)) AND ((@IsNull_folio = 1 AND [folio] IS NULL) OR ([folio] = @Original_folio)) AND ((@IsNull_uuid = 1 AND [uuid] IS NULL) OR ([uuid] = @Original_uuid)) AND ((@IsNull_fecha_fac = 1 AND [fecha_fac] IS NULL) OR ([fecha_fac] = @Original_fecha_fac)) AND ((@IsNull_fecha_tim = 1 AND [fecha_tim] IS NULL) OR ([fecha_tim] = @Original_fecha_tim)) AND ((@IsNull_rfc_emisor = 1 AND [rfc_emisor] IS NULL) OR ([rfc_emisor] = @Original_rfc_emisor)) AND ((@IsNull_rfc_receptor = 1 AND [rfc_receptor] IS NULL) OR ([rfc_receptor] = @Original_rfc_receptor)) AND ((@IsNull_genera_xml = 1 AND [genera_xml] IS NULL) OR ([genera_xml] = @Original_genera_xml)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_id_timbre" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="id_timbre" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serie" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_serie" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serie" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_folio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="folio" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_folio" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="folio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_uuid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="uuid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_uuid" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="uuid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fecha_fac" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fecha_fac" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fecha_fac" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fecha_fac" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fecha_tim" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fecha_tim" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fecha_tim" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fecha_tim" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_rfc_emisor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rfc_emisor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_rfc_emisor" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="rfc_emisor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_rfc_receptor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rfc_receptor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_rfc_receptor" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="rfc_receptor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_genera_xml" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="genera_xml" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_genera_xml" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="genera_xml" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [CFDI_ControlTimbres] ([serie], [folio], [uuid], [fecha_fac], [fecha_tim], [rfc_emisor], [rfc_receptor], [xml], [genera_xml]) VALUES (@serie, @folio, @uuid, @fecha_fac, @fecha_tim, @rfc_emisor, @rfc_receptor, @xml, @genera_xml);
+SELECT id_timbre, serie, folio, uuid, fecha_fac, fecha_tim, rfc_emisor, rfc_receptor, xml, genera_xml FROM CFDI_ControlTimbres WHERE (id_timbre = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@serie" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serie" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@folio" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="folio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@uuid" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="uuid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fecha_fac" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fecha_fac" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fecha_tim" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fecha_tim" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@rfc_emisor" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="rfc_emisor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@rfc_receptor" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="rfc_receptor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@xml" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="xml" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@genera_xml" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="genera_xml" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id_timbre, serie, folio, uuid, fecha_fac, fecha_tim, rfc_emisor, rfc_receptor, xml, genera_xml
+FROM            CFDI_ControlTimbres</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [CFDI_ControlTimbres] SET [serie] = @serie, [folio] = @folio, [uuid] = @uuid, [fecha_fac] = @fecha_fac, [fecha_tim] = @fecha_tim, [rfc_emisor] = @rfc_emisor, [rfc_receptor] = @rfc_receptor, [xml] = @xml, [genera_xml] = @genera_xml WHERE (([id_timbre] = @Original_id_timbre) AND ((@IsNull_serie = 1 AND [serie] IS NULL) OR ([serie] = @Original_serie)) AND ((@IsNull_folio = 1 AND [folio] IS NULL) OR ([folio] = @Original_folio)) AND ((@IsNull_uuid = 1 AND [uuid] IS NULL) OR ([uuid] = @Original_uuid)) AND ((@IsNull_fecha_fac = 1 AND [fecha_fac] IS NULL) OR ([fecha_fac] = @Original_fecha_fac)) AND ((@IsNull_fecha_tim = 1 AND [fecha_tim] IS NULL) OR ([fecha_tim] = @Original_fecha_tim)) AND ((@IsNull_rfc_emisor = 1 AND [rfc_emisor] IS NULL) OR ([rfc_emisor] = @Original_rfc_emisor)) AND ((@IsNull_rfc_receptor = 1 AND [rfc_receptor] IS NULL) OR ([rfc_receptor] = @Original_rfc_receptor)) AND ((@IsNull_genera_xml = 1 AND [genera_xml] IS NULL) OR ([genera_xml] = @Original_genera_xml)));
+SELECT id_timbre, serie, folio, uuid, fecha_fac, fecha_tim, rfc_emisor, rfc_receptor, xml, genera_xml FROM CFDI_ControlTimbres WHERE (id_timbre = @id_timbre)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@serie" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serie" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@folio" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="folio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@uuid" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="uuid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fecha_fac" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fecha_fac" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fecha_tim" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fecha_tim" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@rfc_emisor" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="rfc_emisor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@rfc_receptor" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="rfc_receptor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@xml" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="xml" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@genera_xml" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="genera_xml" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_id_timbre" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="id_timbre" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serie" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_serie" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="serie" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_folio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="folio" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_folio" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="folio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_uuid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="uuid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_uuid" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="uuid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fecha_fac" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fecha_fac" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fecha_fac" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fecha_fac" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fecha_tim" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fecha_tim" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fecha_tim" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fecha_tim" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_rfc_emisor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rfc_emisor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_rfc_emisor" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="rfc_emisor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_rfc_receptor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rfc_receptor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_rfc_receptor" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="rfc_receptor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_genera_xml" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="genera_xml" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_genera_xml" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="genera_xml" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id_timbre" ColumnName="id_timbre" DataSourceName="Production.dbo.CFDI_ControlTimbres" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@id_timbre" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="id_timbre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_timbre" DataSetColumn="id_timbre" />
+              <Mapping SourceColumn="serie" DataSetColumn="serie" />
+              <Mapping SourceColumn="folio" DataSetColumn="folio" />
+              <Mapping SourceColumn="uuid" DataSetColumn="uuid" />
+              <Mapping SourceColumn="fecha_fac" DataSetColumn="fecha_fac" />
+              <Mapping SourceColumn="fecha_tim" DataSetColumn="fecha_tim" />
+              <Mapping SourceColumn="rfc_emisor" DataSetColumn="rfc_emisor" />
+              <Mapping SourceColumn="rfc_receptor" DataSetColumn="rfc_receptor" />
+              <Mapping SourceColumn="xml" DataSetColumn="xml" />
+              <Mapping SourceColumn="genera_xml" DataSetColumn="genera_xml" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="Production_AUXConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ObtieneUUID" Modifier="Public" Name="ObtieneUUID" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ObtieneUUID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ISNULL(MAX(uuid), 'NE') AS uuid
+FROM            CFDI_ControlTimbres
+WHERE        (folio = @folio) AND (serie = @serie)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="folio" ColumnName="folio" DataSourceName="Production.dbo.CFDI_ControlTimbres" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@folio" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="folio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="serie" ColumnName="serie" DataSourceName="Production.dbo.CFDI_ControlTimbres" DataTypeServer="varchar(6)" DbType="AnsiString" Direction="Input" ParameterName="@serie" Precision="0" ProviderType="VarChar" Scale="0" Size="6" SourceColumn="serie" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -3954,6 +4070,70 @@ SELECT RFC, Nombre FROM CFDI_Bancos WHERE (RFC = @RFC)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="CFDI_ControlTimbres" msprop:Generator_TableClassName="CFDI_ControlTimbresDataTable" msprop:Generator_TableVarName="tableCFDI_ControlTimbres" msprop:Generator_TablePropName="CFDI_ControlTimbres" msprop:Generator_RowDeletingName="CFDI_ControlTimbresRowDeleting" msprop:Generator_RowChangingName="CFDI_ControlTimbresRowChanging" msprop:Generator_RowEvHandlerName="CFDI_ControlTimbresRowChangeEventHandler" msprop:Generator_RowDeletedName="CFDI_ControlTimbresRowDeleted" msprop:Generator_UserTableName="CFDI_ControlTimbres" msprop:Generator_RowChangedName="CFDI_ControlTimbresRowChanged" msprop:Generator_RowEvArgName="CFDI_ControlTimbresRowChangeEvent" msprop:Generator_RowClassName="CFDI_ControlTimbresRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_timbre" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_timbre" msprop:Generator_ColumnPropNameInRow="id_timbre" msprop:Generator_ColumnPropNameInTable="id_timbreColumn" msprop:Generator_UserColumnName="id_timbre" type="xs:decimal" />
+              <xs:element name="serie" msprop:Generator_ColumnVarNameInTable="columnserie" msprop:Generator_ColumnPropNameInRow="serie" msprop:Generator_ColumnPropNameInTable="serieColumn" msprop:Generator_UserColumnName="serie" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="folio" msprop:Generator_ColumnVarNameInTable="columnfolio" msprop:Generator_ColumnPropNameInRow="folio" msprop:Generator_ColumnPropNameInTable="folioColumn" msprop:Generator_UserColumnName="folio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="uuid" msprop:Generator_ColumnVarNameInTable="columnuuid" msprop:Generator_ColumnPropNameInRow="uuid" msprop:Generator_ColumnPropNameInTable="uuidColumn" msprop:Generator_UserColumnName="uuid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="36" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_fac" msprop:Generator_ColumnVarNameInTable="columnfecha_fac" msprop:Generator_ColumnPropNameInRow="fecha_fac" msprop:Generator_ColumnPropNameInTable="fecha_facColumn" msprop:Generator_UserColumnName="fecha_fac" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_tim" msprop:Generator_ColumnVarNameInTable="columnfecha_tim" msprop:Generator_ColumnPropNameInRow="fecha_tim" msprop:Generator_ColumnPropNameInTable="fecha_timColumn" msprop:Generator_UserColumnName="fecha_tim" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rfc_emisor" msprop:Generator_ColumnVarNameInTable="columnrfc_emisor" msprop:Generator_ColumnPropNameInRow="rfc_emisor" msprop:Generator_ColumnPropNameInTable="rfc_emisorColumn" msprop:Generator_UserColumnName="rfc_emisor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rfc_receptor" msprop:Generator_ColumnVarNameInTable="columnrfc_receptor" msprop:Generator_ColumnPropNameInRow="rfc_receptor" msprop:Generator_ColumnPropNameInTable="rfc_receptorColumn" msprop:Generator_UserColumnName="rfc_receptor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="xml" msprop:Generator_ColumnVarNameInTable="columnxml" msprop:Generator_ColumnPropNameInRow="xml" msprop:Generator_ColumnPropNameInTable="xmlColumn" msprop:Generator_UserColumnName="xml" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="genera_xml" msprop:Generator_ColumnVarNameInTable="columngenera_xml" msprop:Generator_ColumnPropNameInRow="genera_xml" msprop:Generator_ColumnPropNameInTable="genera_xmlColumn" msprop:Generator_UserColumnName="genera_xml" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -3989,6 +4169,10 @@ SELECT RFC, Nombre FROM CFDI_Bancos WHERE (RFC = @RFC)</CommandText>
     <xs:unique name="CFDI_Bancos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:CFDI_Bancos" />
       <xs:field xpath="mstns:RFC" />
+    </xs:unique>
+    <xs:unique name="CFDI_ControlTimbres_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CFDI_ControlTimbres" />
+      <xs:field xpath="mstns:id_timbre" />
     </xs:unique>
   </xs:element>
 </xs:schema>

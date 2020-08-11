@@ -46,7 +46,7 @@ Public Class Form1
 
         If rbFinagil.Checked = True Then
             ToolStripLabel1.Text = "REP - " + CFDI_EncabezadoTableAdapter.SacaFolio.ToString
-            txtMails.Text = "lgarcia@finagil.com.mx;lhernandez@finagil.com.mx"
+            txtMails.Text = "lgarcia@finagil.com.mx;elizabeth.romero@finagil.com.mx"
         Else
             ToolStripLabel1.Text = "REPA" + CFDI_EncabezadoTableAdapter.SacaFolioArfin.ToString
             txtMails.Text = "lgarcia@finagil.com.mx;roberto.zarza@finagil.com.mx"
@@ -324,7 +324,7 @@ Public Class Form1
         limpiar_1()
         If rbFinagil.Checked = True Then
             ToolStripLabel1.Text = "REP - " + CFDI_EncabezadoTableAdapter.SacaFolio.ToString
-            txtMails.Text = "lgarcia@finagil.com.mx;lhernandez@finagil.com.mx"
+            txtMails.Text = "lgarcia@finagil.com.mx;elizabeth.romero@finagil.com.mx"
         Else
             ToolStripLabel1.Text = "REPA" + CFDI_EncabezadoTableAdapter.SacaFolioArfin.ToString
             txtMails.Text = "lgarcia@finagil.com.mx;roberto.zarza@finagil.com.mx"
@@ -660,7 +660,7 @@ Public Class Form1
 
     Private Sub rbFinagil_Click(sender As Object, e As EventArgs) Handles rbFinagil.Click
         ToolStripLabel1.Text = "REP - " + CFDI_EncabezadoTableAdapter.SacaFolio.ToString
-        txtMails.Text = "lgarcia@finagil.com.mx;lhernandez@finagil.com.mx"
+        txtMails.Text = "lgarcia@finagil.com.mx;elizabeth.romero@finagil.com.mx"
     End Sub
 
     Private Sub cbDatosBancarios_CheckedChanged(sender As Object, e As EventArgs) Handles cbDatosBancarios.CheckedChanged

@@ -13,17 +13,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'Me.CFDI_DetalleTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Detalle)
-        Me.InstrumentoMonetarioTableAdapter.Fill(Me.Production_AUXDataSet.InstrumentoMonetario)
-        Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
-        Me.Vw_CFDI_FacturasConSaldoTableAdapter.Fill(Me.Production_AUXDataSet.Vw_CFDI_FacturasConSaldo)
+
         Me.CFDI_BancosTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Bancos)
-        Me.BancosTableAdapter.Fill(Me.Production_AUXDataSet.Bancos)
-        Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
-        'Me.CFDI_EncabezadoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Encabezado)
-        Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
-        Me.CFDI_BancosTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Bancos)
-        'Me.CFDI_ControlTimbresTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ControlTimbres)
         DateTimePicker1.MaxDate = Date.Now
         DateTimePicker1.MinDate = Date.Now.AddDays((Date.Now.Day - 1) * -1).AddMonths(-1)
 
@@ -37,19 +28,18 @@ Public Class Form1
 
         Me.BancosTableAdapter.Fill(Me.Production_AUXDataSet.Bancos)
         Me.InstrumentoMonetarioTableAdapter.Fill(Me.Production_AUXDataSet.InstrumentoMonetario)
-        Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
+        'Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
         Me.Vw_CFDI_FacturasConSaldoTableAdapter.Fill(Me.Production_AUXDataSet.Vw_CFDI_FacturasConSaldo)
         Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
-        Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
-        Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
-        Me.CFDI_EncabezadoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Encabezado)
+
+        'Me.CFDI_EncabezadoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Encabezado)
 
         If rbFinagil.Checked = True Then
             ToolStripLabel1.Text = "REP - " + CFDI_EncabezadoTableAdapter.SacaFolio.ToString
             txtMails.Text = "lgarcia@finagil.com.mx;elizabeth.romero@finagil.com.mx"
         Else
             ToolStripLabel1.Text = "REPA" + CFDI_EncabezadoTableAdapter.SacaFolioArfin.ToString
-            txtMails.Text = "lgarcia@finagil.com.mx;roberto.zarza@finagil.com.mx"
+            txtMails.Text = "lgarcia@finagil.com.mx;lhernandez@finagil.com.mx"
         End If
         limpiar_1()
     End Sub
@@ -327,8 +317,38 @@ Public Class Form1
             txtMails.Text = "lgarcia@finagil.com.mx;elizabeth.romero@finagil.com.mx"
         Else
             ToolStripLabel1.Text = "REPA" + CFDI_EncabezadoTableAdapter.SacaFolioArfin.ToString
-            txtMails.Text = "lgarcia@finagil.com.mx;roberto.zarza@finagil.com.mx"
+            txtMails.Text = "lgarcia@finagil.com.mx;lhernandez@finagil.com.mx"
         End If
+
+        '*********************
+        'Me.CFDI_DetalleTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Detalle)
+        Me.InstrumentoMonetarioTableAdapter.Fill(Me.Production_AUXDataSet.InstrumentoMonetario)
+        'Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
+        'Me.Vw_CFDI_FacturasConSaldoTableAdapter.Fill(Me.Production_AUXDataSet.Vw_CFDI_FacturasConSaldo)
+        Me.CFDI_BancosTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Bancos)
+        'Me.BancosTableAdapter.Fill(Me.Production_AUXDataSet.Bancos)
+        'Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
+        'Me.CFDI_EncabezadoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Encabezado)
+        'Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
+        'Me.CFDI_BancosTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Bancos)
+        'Me.CFDI_ControlTimbresTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ControlTimbres)
+        DateTimePicker1.MaxDate = Date.Now
+        DateTimePicker1.MinDate = Date.Now.AddDays((Date.Now.Day - 1) * -1).AddMonths(-1)
+
+        dtpFechaEmision.MaxDate = Date.Now
+        dtpFechaEmision.MinDate = Date.Now.AddDays(-3)
+
+
+        Me.BancosTableAdapter.Fill(Me.Production_AUXDataSet.Bancos)
+        Me.InstrumentoMonetarioTableAdapter.Fill(Me.Production_AUXDataSet.InstrumentoMonetario)
+        'Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
+        Me.Vw_CFDI_FacturasConSaldoTableAdapter.Fill(Me.Production_AUXDataSet.Vw_CFDI_FacturasConSaldo)
+        Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
+        'Me.CFDI_ComplementoPagoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_ComplementoPago)
+        'Me.Vw_CFDI_SadosFacturaTableAdapter.FillVSaldo(Me.Production_AUXDataSet.Vw_CFDI_SadosFactura)
+        'Me.CFDI_EncabezadoTableAdapter.Fill(Me.Production_AUXDataSet.CFDI_Encabezado)
+
+
     End Sub
 
 
@@ -382,6 +402,7 @@ Public Class Form1
     End Sub
 
     Sub Filtros()
+
         If TxtSeriefil.Text.Length > 0 Then
             If Txtfoliofil.Text.Length > 0 Then
                 Vw_CFDI_FacturasConSaldoBindingSource.Filter = "[27_Serie_Comprobante] like '" & TxtSeriefil.Text & "%' and [1_Folio] = " & Txtfoliofil.Text
@@ -403,6 +424,7 @@ Public Class Form1
         Else
             Me.txtPago.Enabled = True
         End If
+        Vw_CFDI_FacturasConSaldoBindingSource.RemoveFilter()
 
     End Sub
 
@@ -463,6 +485,7 @@ Public Class Form1
         SpeiCert = ""
         SpeiCadOrg = ""
         SpeiSello = ""
+
     End Sub
 
     Private Sub dgDoctosPagos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgDoctosPagos.CellContentClick
@@ -655,7 +678,7 @@ Public Class Form1
 
     Private Sub rbArfin_Click(sender As Object, e As EventArgs) Handles rbArfin.Click
         ToolStripLabel1.Text = "REPA - " + CFDI_EncabezadoTableAdapter.SacaFolioArfin.ToString
-        txtMails.Text = "lgarcia@finagil.com.mx;roberto.zarza@finagil.com.mx"
+        txtMails.Text = "lgarcia@finagil.com.mx;lhernandez@finagil.com.mx"
     End Sub
 
     Private Sub rbFinagil_Click(sender As Object, e As EventArgs) Handles rbFinagil.Click
@@ -725,6 +748,10 @@ Public Class Form1
                 End If
             End If
         End If
+    End Sub
+
+    Private Sub Txtfoliofil_TextChanged(sender As Object, e As EventArgs) Handles Txtfoliofil.TextChanged
+
     End Sub
 
     'Sub Filtros2()

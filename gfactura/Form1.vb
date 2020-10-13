@@ -424,7 +424,7 @@ Public Class Form1
         Else
             Me.txtPago.Enabled = True
         End If
-        Vw_CFDI_FacturasConSaldoBindingSource.RemoveFilter()
+        'Vw_CFDI_FacturasConSaldoBindingSource.RemoveFilter()
 
     End Sub
 

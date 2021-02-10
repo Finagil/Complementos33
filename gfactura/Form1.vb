@@ -39,7 +39,7 @@ Public Class Form1
             txtMails.Text = "lgarcia@finagil.com.mx;elizabeth.romero@finagil.com.mx"
         Else
             ToolStripLabel1.Text = "REPA" + CFDI_EncabezadoTableAdapter.SacaFolioArfin.ToString
-            txtMails.Text = "lgarcia@finagil.com.mx;lhernandez@finagil.com.mx"
+            txtMails.Text = "lgarcia@finagil.com.mx;lhernandez@finagil.com.mx;facelec@lamoderna.com.mx"
         End If
         limpiar_1()
     End Sub

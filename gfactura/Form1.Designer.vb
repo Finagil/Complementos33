@@ -955,7 +955,7 @@ Partial Class Form1
         Me.txtMails.Multiline = True
         Me.txtMails.Name = "txtMails"
         Me.txtMails.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtMails.Size = New System.Drawing.Size(436, 28)
+        Me.txtMails.Size = New System.Drawing.Size(436, 37)
         Me.txtMails.TabIndex = 74
         '
         'lbMails
